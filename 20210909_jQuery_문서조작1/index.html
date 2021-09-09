@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - 문서조작1</title>
+    <link rel="stylesheet" href="./css/style.css">
+    
+</head>
+<body>
+    <h2>문서 객체 조작</h2>
+    <h3>$("선택자").html() : 선택자가 하위에 포함하고 있는 모든 요소 및 텍스트를 저장 - get 방식(변수가필요)</h3>
+    <h3>$("선택자").html("새로운 요소 및 텍스트" 또는 구조를 구성하고 있는 변수) : 선택자의 하위요소에 <i>"새로운 요소 및 텍스트" 또는 구조를 구성하고 있는 변수</i>로 변경(갱신-renewal) - set 방식</h3>
+    <div class="html_method">
+        <h3>Special <span>Dishes</span></h3>
+    </div>
+
+    <hr>
+
+    <h3>$("선택자").attr("속성명") : 선택자 태그 내부에 위치한 속성의 속성값을 가져온다. - get 방식(변수가 필요)</h3>
+    <h3>$("선택자").attr("속성명", "새로운 속성값") : 선택자 태그 내부에 위치한 속성의 속성값을 새로운 속성값으로 교체, 생성, 삭제 - set 방식</h3>
+
+    <div class="attr_method">
+        <h4>개인 능력</h4>
+        <div class="average" data-score="95">
+            <div class="gage_bar" style="--i:3; --color:#fa0;"></div>
+            <p>HTML5</p>
+        </div>
+        <div class="average" data-score="85">
+            <div class="gage_bar" style="--i:3; --color:#ff0;"></div>
+            <p>CSS3</p>
+        </div>
+        <div class="average" data-score="75">
+            <div class="gage_bar" style="--i:3; --color:#0ff;"></div>
+            <p>Javascript</p>
+        </div>
+    </div>
+
+
+    <h4>attr() 메서드를 통한 복수의 속성과 속성값 넣기</h4>
+    <p class="contxt">콘텍스트 문장</p>
+
+
+
+    <h3>removeAttr("속성명") : 기존 태그 내부에 존재하던 속성을 완전히 제거. 속성명이 제거됨으로써 속성값도 한꺼번에 제거됨</h3>
+    <div class="removeAttr_method">
+        <p class="actor" role="number3">송강호</p>
+    </div>
+
+
+    <h3>removeClass("제거해야할 클래스명") : 기존에 존재하던 class의 속성값 중에서 지목된 클래스명만 제거. class="box active" = removeClass("active") => class="box"</h3>
+
+    <div class="class_method_01">
+        <button class="add">클래스 추가에 의한 이미지 이동</button>
+        <button class="remove">클래스 제거에 의한 이미지 원복</button>
+        <div>
+            <img src="./img/img_01.png" alt="">
+        </div>
+    </div>
+
+
+    <h4>매개체(도구) 하나가 두가지 역할을 동시에 수행해야할 경우 (하나의 버튼에서 on/off 기능을 수행해야할 경우 - 엘레베이터 버튼)</h4>
+
+    <div class="both_class">
+        <button>8</button>
+    </div>
+
+
+    <h4>엘레베이터 버튼 구성하기 : 버튼의 on/off 상태를 구성한다.</h4>
+    <div class="elevator_btn">
+        <ul>
+            <li><span>4</span></li>
+            <li><span>3</span></li>
+            <li><span>2</span></li>
+            <li><span>1</span></li>
+        </ul>
+    </div>
+
+    <h4>상단 메뉴 구성(주메뉴 + 서브메뉴 : 주메뉴 클릭시 각 해당하는 서브메뉴들만 보여준다.)</h4>
+    <div id="header">
+        <div class="wrap">
+            <div class="logo">
+                <a href="">LOGO</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="">About</a>
+                        <ul>
+                            <li><a href="">Education</a></li>
+                            <li><a href="">Skills</a></li>
+                            <li><a href="">Career</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Portfolio</a>
+                        <ul>
+                            <li><a href="">Design</a></li>
+                            <li><a href="">Planning</a></li>
+                            <li><a href="">Develop</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Project</a>
+                        <ul>
+                            <li><a href="">Team</a></li>
+                            <li><a href="">indivisual</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+
+    <hr>
+
+
+    <h3>val() : 입력요소에 있는 value 값을 가져온다. - get 방식(변수 필요)</h3>
+    <h3>val("새로운 value 값") : 기존의 value 값을 새로운 value 값으로 변경 - set 방식</h3>
+    <div class="val_method">
+        <input type="text" placeholder="이름 입력" value="홍길동">
+    </div>
+
+
+    <hr>
+
+    <h3>prop("속성명") : 선택자가 갖고 있는 속성명의 속성값을 반환 - get 방식</h3>
+    <h3>prop("속성명" , "새로운 속성값") : 기존의 속성값을 변경한다. - set 방식</h3>
+    <div class="prop_method">
+        <img src="./img/img_01.png" alt="">
+    </div>
+    <div>
+        <input type="checkbox" class="chk_bx">&nbsp; 노트북 <br>
+        <input type="checkbox" class="chk_sel">&nbsp; 데스크탑
+    </div>
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

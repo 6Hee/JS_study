@@ -1,0 +1,22 @@
+@charset "utf-8";
+*{box-sizing: border-box;}
+html, body{margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6, p{margin: 0;}
+ul, ol{margin: 0; padding: 0; list-style: none;}
+a{text-decoration: none;}
+
+
+
+.bx_frame{}
+.bx_frame > div{width: 120px; height: 120px;}
+.bx_frame > div.bx1{background-color: #faa;}
+.bx_frame > div.bx2{background-color: #ffa;}
+.bx_frame > div.bx3{background-color: #aff;}
+
+
+.ch_img{
+    margin-bottom: 300px;
+}
+
+.ch_img img{display: none;}
+.ch_img img:first-child{display: block;}

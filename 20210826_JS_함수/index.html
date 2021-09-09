@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 - 함수</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <h1>함수의 구성</h1>
+    <img id="func" src="" alt="">
+
+
+    <h3>클릭 이벤트 발생에 의한 이미지 변경</h3>
+    <div>
+        <button onclick="img_change();">이미지 변경</button>
+        <!--js 문서 내부에서 호출이 아닌 연동된 외부에서 함수를 호출-->
+    </div>
+    <img class="img_01" src="./img/boy.png" alt="">
+
+    <h3>버튼 클릭시마다 화면의 배경색을 변경(모든 배경색 데이터는 배열데이터에 저장)</h3>
+    <button onclick="change_bgc();">배경색 변경하기</button>
+
+    <h3>버튼 클릭시마다 지정한 장소의 이미지 변경하기</h3>
+    <div>
+        <button onclick="change_img();">▶</button>
+    </div>
+    <img id="btn_img" src="./img/pic-1.jpg" alt="">
+
+    <hr>
+
+    <h3>이전 버튼과 다음 버튼을 클릭시 각 해당하는 이미지를 순차적으로 불러오기</h3>
+    <p>이전 버튼 클릭시 4 -> 3 -> 2 -> 1 -> 4 -> 3 -> ...</p>
+    <p>다음 버튼 클릭시 1 -> 2 -> 3 -> 4 -> 1 -> 2 -> ....</p>
+
+
+    <div>
+        <button onclick="prev();">이전</button>
+        <button onclick="next();">다음</button>
+    </div>
+    <img id="ch_img" src="./img/pic-1.jpg" alt="">
+
+    <hr>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>아이디</th>
+                <th>이메일</th>
+            </tr>
+        </thead>
+        <tbody id="mem_result">
+            <tr>
+                <td>강나라</td>
+                <td>gnr111</td>
+                <td>gnr111@gmail.com</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>함수의 내부 호출문에 의해 또 다른 함수를 호출한다.</h3>
+    <button onclick="add_txt()">Detail More</button>
+    <div class="add">
+
+
+        <!--
+            
+        <p>네이버(주)는 한국 최대 검색포털 네이버 뿐만 아니라, 전 세계 2억 명이 사용하고 있는 모바일 메신저 라인, 동영상 카메라 스노우, 디지털 만화 서비스 네이버웹툰 등을 서비스하고 있는 글로벌 ICT 기업입니다.</p> 
+        <p>네이버는 인공지능, 로보틱스, 모빌리티 등 미래 기술에 대한 지속적인 연구개발을 통해 기술 플랫폼의 변화와 혁신을 추구하며 세계 각국의 수많은 이용자와 다양한 파트너들이 함께 성장할 수 있도록 노력하고 있습니다.</p>
+
+        -->
+    </div>
+
+
+    <hr>
+    <script src="./js/script.js"></script>
+</body>
+</html>

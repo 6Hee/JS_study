@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 - DOM - 2</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!--목표 : 문서의 객체 조작을 좀 자유롭게 진행하도록 구성-->
+    <h2>DOM에서 요소를 생성하고 지정한 장소의 하위로 위치시키기</h2>
+    <div class="createElement_appendChild">
+        <p>첫번째 문장</p>
+
+    </div>
+
+
+    <h3>실습 : 배열 데이터에 "RED","ORANGE","YELLOW","GREEN","BLUE"를 저장하고 하단의 공간에 차례대로 내부의 자식으로 넣으시오.</h3>
+    <div class="color_box">
+        <p>색상</p>
+        <!-- ... -->
+    </div>
+
+
+
+
+    <h3>append와 prepend</h3>
+    <p>append : 맨 마지막 자식을 추가한다. (기준은 부모요소)</p>
+
+    <p>prepend : 맨 첫번째 자식을 추가한다. (기준은 부모요소)</p>
+
+    <div class="add_first_last">
+        <p>오렌지</p>
+        <p>옐로우</p>
+        <p>그린</p>
+    </div>
+
+
+
+    <h3>객체의 이동으로 활용되는 append와 prepend</h3>
+    <div class="move_child">
+        <p>첫째</p>
+        <p>둘째</p>
+        <p>셋째</p>
+        <p>넷째</p>
+    </div>
+
+
+    <h3>문서 객체 이동시키기 - appendChild() vs append()의 차이</h3>
+    <div id="appendChild_append">
+        <div class="compare_appendChild">
+            <h1>1-1. 기존 문장</h1>
+            <p>1-2. 기존에 위치한 문단</p>
+        </div>
+        <div class="compare_append">
+            <h1>2-1. 기존 문장</h1>
+            <p>2-2. 기존에 위치한 문단</p>
+        </div>
+    </div>
+
+
+
+    <h3>실습 : 버튼을 클릭하여 이미지의 위치를 변경시키기()</h3>
+    <div class="img_move">
+        <button class="prev">Prev</button>
+        <button class="next">Next</button>
+        <div class="images">
+            <img src="./img/001-hamster.png" alt="">
+            <img src="./img/002-turtle.png" alt="">
+            <img src="./img/003-cat.png" alt="">
+            <img src="./img/004-dog.png" alt="">
+            <img src="./img/005-bird.png" alt="">
+            <img src="./img/006-fish.png" alt="">
+            <img src="./img/007-sandbox.png" alt="">
+        </div>
+    </div>
+
+
+
+    <h3>기존에 존재하는 하위의 자식을 제거하는 removeChild()</h3>
+    <div class="removeChild_method">
+        <p>영국</p>
+        <p>프랑스</p>
+        <p>호주</p>
+        <p>태국</p>
+        <p>중국</p>
+    </div>
+
+
+
+
+    <h3>실습 : 버튼 클릭시, 하나씩 제거되도록 스크립트로 구현하시오.</h3>
+
+    <button class="del_btn">리스트 항목 삭제</button>
+    <div class="color_group">
+        <p>RED</p>
+        <p>ORANGE</p>
+        <p>YELLOW</p>
+        <p>GREEN</p>
+        <p>BLUE</p>
+    </div>
+
+
+
+    <h2>To Do List</h2>
+    <section id="todolist_cover">
+        <h3>오늘 할일 목록 만들기</h3>
+        <div class="input_line">
+            <input type="text" id="todo" name="todo">
+            <button id="add">등록하기</button>
+        </div>
+        
+        <div id="todo_list">
+            <!--
+            <div class="list">
+                <p>할일 목록1</p>
+                <span class="remove">×</span>
+            </div>
+            -->
+        </div>
+        
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

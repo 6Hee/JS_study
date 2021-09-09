@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+
+.cont{
+    width: 50px; height: 50px;
+    background: #faf;
+    display: inline-block;
+    text-align: center;
+    line-height: 50px;
+    margin: 0 20px;
+    border-radius: 50%;
+}
+.cont:nth-child(1){background: #aaa;}
+.cont:nth-child(2){background: #faf;}
+.cont:nth-child(3){background: #ffa;}
+.cont:nth-child(4){background: #aff;}
+.cont:nth-child(5){background: #aaf;}
+.cont:nth-child(6){background: #faa;}

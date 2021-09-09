@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - 문서조작2</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/script.js"></script>
+</head>
+<body>
+    
+
+    <h3>before(), insertBefore() / after(), insertAfter() : 형제를 이전 또는 다음 추가</h3>
+    <ul class="siblings_method">
+        <li>회사연혁</li>
+        <li>회사위치</li>
+        <!--<li>회사비전</li>  insertBefore() 결과 --> 
+        <!--<li>회사경영</li>  before() 결과 --> 
+        <li>회사임원 조직도</li>
+        <li>CEO 인사말</li>
+        <li>CI/BI</li>
+    </ul>
+
+    <h3>append(), appendTo() / prepend(), prependTo() : 새로운 마지막 또는 첫번째 자식을 추가</h3>
+    <div class="childAdd_method">
+        <!--<li>브랜드</li>-->
+        <li>멤버쉽</li>
+        <li>이벤트</li>
+        <!--<li>고객센터</li>-->
+    </div>
+
+
+    <h3>객체 이동</h3>
+    <div class="bx_frame">
+        <div class="bx1">1</div>
+        <div class="bx2">2</div>
+        <div class="bx3">3</div>
+    </div>
+
+
+
+    <h3>실습1. 이미지 넣기</h3>
+    <p>세장의 이미지가 모두 들어가면 버튼을 없앤다.</p>
+    <p>힌트 : 가상의 수를 지정한 후 한장씩 내부에 넣을 때마다 가상의 수를 하나씩 올린다. 최종적으로 3번 올라가면 더 이상 올라가지 못하도록 막고 버튼은 보이지 않도록 처리한다.</p>
+    <button class="addImg">한장씩 .character_frame에 넣기</button>
+    <div class="character_frame">
+
+    </div>
+
+    <hr>
+
+    <h3>실습2. 객체 이동시키기</h3>
+    <p>이전/다음 버튼 클릭시 해당하는 이미지 순서대로 맨좌측에 보여주기(클릭시마다 first()/last()를 지정하여 prepend 또는 append를 사용하여 객체를 이동시킬 것)</p>
+    <button class="prev">이전</button>
+    <button class="next">다음</button>
+    <div class="ch_img">
+        <img src="./img/Character_1.png" alt="">
+        <img src="./img/Character_2.png" alt="">
+        <img src="./img/Character_3.png" alt="">
+    </div>
+
+</body>
+</html>

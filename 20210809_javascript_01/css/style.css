@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+*{box-sizing: border-box;}
+
+
+.title{color: #07f; font-style: italic;}
+
+.land_01{
+    width: 400px; height: 400px;
+    background-size: cover;
+    background-position: 50% 50%;
+}

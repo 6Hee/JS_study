@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바 스크립트 - 이벤트</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <h1>이벤트</h1>
+    <p>이벤트란 : 사용자가 일련의 동작을 수행하는 과정에서 함수문을 호출하여 실행시키는 것을 말함</p>
+    <p> - 요소대상 이벤트 : click, mouse, keyboard</p>
+    <p> - 전체대상 이벤트 : load, scroll, resize</p>
+
+    <h2>요소 대상 이벤트 : mouseover & mouseout</h2>
+    <h3>직접 함수를 호출하여 이벤트를 구성(외부 스크립트를 사용하지 않음)</h3>
+    <img src="./img/boy.png" onmouseover="this.src='./img/girl.png'" onmouseout="this.src='./img/boy.png'" alt="이미지">
+    <p>this는 내가 포함된 문서 객체인 img를 의미</p>
+
+    <h3>외부 스크립트를 활용하여 호출</h3>
+    <img class="ch_img" src="./img/tree-1-thumb.jpg" onmouseover="call_ch1();" onmouseout="call_ch2();" alt="">
+
+
+    <h2>요소 대상 이벤트 : click</h2>
+    <button onclick="openImg();">이미지 나와라</button>
+    <div class="showing"></div>
+
+
+
+    <h3>버튼 클릭에 대한 이미지 교체</h3>
+    <div class="clickEvt">
+        <ul>
+            <li><button onclick="prev();">이번 이미지</button></li>
+            <li><button onclick="next();">다음 이미지</button></li>
+        </ul>
+        <img class="change_img" src="./img/tree-1.jpg" alt="나무 이미지">
+    </div>
+
+    <h3>게임 캐릭터의 진행</h3>
+    <button onclick="move();">이동</button>
+    <button onclick="add_hp();">생명력 추가(+10)</button>
+
+    <p class="cur_state">현재 변경된 내용</p>
+
+
+    <h3>반려동물 키우기</h3>
+    <button id="pet_btn">반려동물 정보 가져오기</button>
+    <p class="pet_info">반려동물 정보</p>
+    <img class="pet_img" src="" alt="">
+
+
+    <h3>addEventListener를 사용하여 이벤트 항목을 진행</h3>
+    <button class="addEvt">addEventListener를 통한 이벤트 발생</button>
+
+
+
+    <h3>키보드 이벤트</h3>
+    <input class="input_box" type="text">
+
+
+
+    <h3>마우스 무브 이벤트</h3>
+    <div class="moving_space">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+        <div class="circle5"></div>
+        <div class="circle6"></div>
+        <div class="circle7"></div>
+        <div class="circle8"></div>
+        <div class="circle9"></div>
+        <div class="circle10"></div>
+        <article></article>
+    </div>
+
+
+
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

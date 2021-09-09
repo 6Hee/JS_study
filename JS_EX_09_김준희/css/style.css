@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+.kakao_bx{
+    width: 225px;
+    float: left;
+    margin-bottom: 50px;
+}
+
+#result_05{
+    clear: both;
+}
+#result_05 img{
+    width: 1000px;
+    display: block;
+}
+#result_06 button{
+    margin-top: 50px;
+}

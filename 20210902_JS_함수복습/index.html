@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 함수복습</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <h1>함수를 구성(함수구문 + 함수호출문)</h1>
+    <p>목표 : 사용자가 무엇을 하는 것인가? ---> 선택자 ---> 최종 결과물을 실행할 수 있는 실행문</p>
+    <p>도구 : 사용자는 무엇을 갖고 그 목표를 이룰 수 잇는 것인가? ---> 선택자 --> 함수를 호출</p>
+    <p>방법 : 사용자는 어떤 과정을 거쳐서 원하는 목표에 도달할 수 있는가? ---> 함수</p>
+
+
+    <h2>이미지 클릭시 내부의 속성 중 name이라는 곳에 저장된 값을 받아와서 화면에 표시한다.</h2>
+    <article id="ex_01">
+        <!--<img class="target" src="./img/animal_news_1.jpg" name="PIKA" alt="" onclick="imgInfo();"> -->
+        <img class="target" src="./img/animal_news_1.jpg" name="PIKA" alt=""
+        <p>내이름은 <span class="myName">000</span></p>
+    </article>
+
+
+    <hr>
+    
+    
+    <article id="ex_02">
+        <img class="target" src="./img/animal_news_10.jpg" name="치타" alt=""
+        <p>내이름은 <span class="myName">00</span></p>
+    </article>
+
+
+    <hr>
+    
+    
+    <article id="ex_03">
+        <img class="target" src="./img/animal_news_2.jpg" name="허잉버드" alt=""
+        <p>내이름은 <span class="myName">0000</span></p>
+    </article>
+
+
+
+    <h3>입력상자내의 본인 이름을 작성하여 "전송" 버튼을 클릭했을 때 "000님의 방문을 환영합니다."라는 문구가 표시되도록 구성(힌트 : 입력상자의 value 값을 받아온다.  선택자 .value)</h3>
+
+    <article id="ex_04">
+        <input type="text" placeholder="본인의 이름을 작성하세요.">
+        <button>전송</button>
+        <p><span>000</span>님의 방문을 환영합니다.</p>
+    </article>
+
+
+    <p>추가실습...입력 후 클릭을 하면 입력창 내부의 문구는 처음처럼 공란으로 구성한다. 단, 이름은 p 태그 내에 표기되어야 함</p>
+
+
+    <h3>버튼을 구성하여 클릭시 해당하는 이미지만 보여준다.</h3>
+    <div class="btns">
+        <button>animal</button>
+        <button>history</button>
+    </div>
+    <div class="cont">
+        <img class="animal" src="./img/animal_news_1.jpg" alt="">
+        <img class="animal" src="./img/animal_news_2.jpg" alt="">
+        <img class="animal" src="./img/animal_news_3.jpg" alt="">
+        <img class="history" src="./img/history_news_1.jpg" alt="">
+        <img class="history" src="./img/history_news_2.jpg" alt="">
+        <img class="history" src="./img/history_news_3.jpg" alt="">
+    </div>
+
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

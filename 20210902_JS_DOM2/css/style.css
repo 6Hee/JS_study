@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+
+#todolist_cover{width: 600px; margin: 20px auto; padding: 40px; background-color: #eee; border-radius: 16px; box-shadow: inset 2px 2px 8px rgba(0,0,0,0.1), inset -2px -2px 4px rgba(255,255,255,0.85); display: flex; flex-direction: column; align-items: center;}
+
+#todolist_cover h3{padding: 20px 0; color: #777;}
+#todolist_cover .input_line{width: 100%; padding: 20px 0; display: flex; align-items: center; justify-content: space-between; height: 40px;}
+
+
+#todolist_cover .input_line input{
+    width: calc(100% - 100px); height: 100%; border:1px solid #ccc; border-radius:20px; outline-color: #acf;
+}
+
+#todolist_cover .input_line button{width: 80px; height: 100%; border-radius:20px; border:none; background-color: #5af; cursor: pointer; color:#fff; box-shadow: 2px 2px 4px rgba(0,0,0,0.1), -2px -2px 4px rgba(255,255,255,0.85);
+}
+
+#todolist_cover .input_line button:active{box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.1), inset -2px -2px 3px rgba(255, 255, 255, 0.65);}
+
+
+
+#todo_list{width: 100%; border-top: 1px solid #ccc; padding: 20px 0 0;}
+#todo_list .list{width: 100%; display: flex; justify-content: center; align-items: center; padding: 10px; background-color: #f2f2f2; border-radius: 10px; box-shadow: inset 2px 2px 4px rgba(0,0,0,0.1), inset -2px -2px 4px rgba(255,255,255,0.85); margin-bottom: 10px;} 
+
+#todo_list .list p{width: calc(100% - 60px); text-overflow: ellipsis; white-space: nowrap; overflow: hidden; color: #555;}
+#todo_list .list span{display: block; width: 40px; height: 40px; text-align: center; line-height: 36px; cursor: pointer; border-radius: 50%; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1), -2px -2px 4px rgba(255, 255, 255, 0.85); background-color: #fff; color: #777;}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 - BOM(브라우저 객체 모델)</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    
+    <h1>자바스크립트 - Browser Object Model</h1>
+    <p>브라우저의 문서 공간을 제외한 모든 영역</p>
+    <h3>window 객체 : 웹에서 모든 객체를 포함하는 객체</h3>
+    <p>window.document.write("출력내용") -> document.write("출력내용")</ㅔ>
+    <p>window > BOM || DOM || javascript 내장 객체(날짜객체, 수학객체, 문자객체, 배열객체, Object)</p>
+    <p>BOM - history, navigator, location, screen, 팝업창 형태(alert, prompt, confirm), setInterval, setTimeout</p>
+
+
+    <h3>window.open() : 새로운 창을 열 때 사용(예시, 윈도우 팝업창 : 기본 페이지 -> 새로운 문서를 연다.)</h3>
+
+    <button id="winOpen" type="button">윈도우 팝업창 불러오기</button>
+
+    <h3>setInterval : 일정시간을 간격으로 함수 내의 실행문을 실행하는 메서드. 함수문(function) + 실행문 + 대기시간</h3>
+    <p class="interval1">0부터 올라가는 숫자 : <span>000</span></p>
+
+    <p class="interval2">10부터 내려가는 숫자 : <span>10</span></p>
+
+
+    <h4>이미지 슬라이드(이미지 교체)</h4>
+    <div id="imgSlide"></div>
+
+
+    <h3>setTimeout : 지정된 시간이 지난 후 한번만 실행하고 종료한다. (함수문 + 실행문 + 시간)</h3>
+    <p>배경색 한번만 바꾸기</p>
+
+
+    <div class="change_scale">
+        <button>사이즈 변경하기</button>
+        <div class="change_box"></div>
+    </div>
+
+
+    <h3>screen 객체 : 현재 모니터의 (실효)너비와 (실효)높이를 가져올 수 있음(모바일과 태블릿 공간은 브라우저가 화면 전체에 띄워지기 때문)</h3>
+    <p class="cur_width">현재 스크린의 가로폭 : <span></span></p>
+    <p class="cur_height">현재 스크린의 세로폭 : <span></span></p>
+    <p class="cur_availWidth">현재 스크린의 유효 가로폭 : <span></span></p>
+    <p class="cur_availHeight">현재 스크린의 유효 세로폭 : <span></span></p>
+
+
+
+    <h3>location 객체 : URL 주소창의 내용을 변경 / 정보획득이 가능(http 통신을 기반으로 접근)</h3>
+    <h4>location.href : URL 주소창의 내용을 변경(a태그를 사용할 수 없는 경우, 태그 내부에 작성하여 사용 가능)</h4>
+    <div class="href_link" onclick="location.href='https://movie.naver.com/movie/bi/mi/basic.naver?code=193194'">"도굴" 영화 정보보기</div>
+
+
+    <h4>location.hash : URL 주소창의 #을 포함한 말단 정보를 가져온다.</h4>
+
+    
+
+
+
+
+
+
+
+
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

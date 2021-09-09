@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+#ex_01 .myName{font-size: 28px; font-weight: bold; color: rgb(221, 181, 181);}
+
+.btns{padding: 20px 0;}
+.btns button{}
+
+.cont img{height: 60px;}
+
+
+.cont .animal{display: none;}
+.cont .history{display: none;}
