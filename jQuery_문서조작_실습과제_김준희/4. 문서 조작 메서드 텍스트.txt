@@ -1,0 +1,97 @@
+﻿[문서조작 메서드]
+예제20)아래 조건을 읽고 조건에 부합하도록 jQuery를 작성하세요.
+조건1. 이미지를 클릭했을 때, 이미지 태그 내부에 있는 title의 속성값을 저장하고 그 값을 하단 p태그 내부의 내용에 출력하세요. (click() 이벤트와 attr() 메서드 및 text() 메서드를 이용)
+
+		<style>
+			.test_20 img{width: 200px;}
+		</style>
+		<div class="test_20">
+			<img src="img/kakaofriends.jpg" title="카카오프렌즈" alt="kakaofriends 이미지">
+			<p class="img_name"></p>
+		</div>
+	
+예제21)아래 조건을 읽고 조건에 부합하도록 jQuery를 작성하세요.
+조건1. 하단의 '이미지 변경하기' 버튼을 클릭했을 때, 이미지를 클릭했을 때, kakao_img2.jpg 이미지가 보여지도록 구성하세요. (click() 이벤트와 attr() 메서드 메서드를 이용)
+
+		<style>
+			.test_21 img{width: 120px;}
+		</style>
+		<div class="test_21">
+			<button>이미지 변경하기</button>
+			<img src="img/kakao_img1.jpg" alt="카카오프렌즈">
+		</div>
+	
+
+예제22)아래 조건을 읽고 조건에 부합하도록 jQuery를 작성하세요.
+조건1. 각각의 버튼을 클릭했을 때 기존 이미지를 기준 좌우측으로 이미지가 새롭게 출력될 수 있도록 구성하세요. '좌측 이미지 추가' 클릭시 'wall_img1.jpg' / '우측 이미지 추가' 클릭시 'wall_img3.jpg' 출력.
+(click() 이벤트와 prepend(), append() 메서드를 이용)
+
+		<style>
+			.test_22 .img_frame{font-size:0;}
+			.test_22 img{width: 300px;}
+		</style>
+		<div class="test_22">
+			<div class="btn_frame">
+				<button class="left_add">좌측 이미지 추가</button>
+				<button class="right_add">우측 이미지 추가</button>
+			</div>
+			<div class="img_frame">
+				<img src="img/wall_img2.jpg" alt="카카오프렌즈">
+			</div>
+		</div>
+	
+
+예제23)아래 조건을 읽고 조건에 부합하도록 jQuery를 작성하세요.
+조건1. 각각의 버튼을 클릭했을 때 기존 이미지를 기준 좌우측으로 이미지가 새롭게 추가될 수 있도록 구성하세요. '좌측 이미지 넣기' 클릭시 'wall_img4.jpg' / '우측 이미지 넣기' 클릭시 'wall_img6.jpg' 출력.
+(click() 이벤트와 before(), after() 메서드를 이용)
+
+		<style>
+			.test_23 .img_frame{font-size:0;}
+			.test_23 img{width: 300px;}
+		</style>
+		<div class="test_23">
+			<div class="btn_frame">
+				<button class="before_add">좌측 이미지 넣기</button>
+				<button class="after_add">우측 이미지 넣기</button>
+			</div>
+			<div class="img_frame">
+				<img id="kakao" src="img/wall_img5.jpg" alt="카카오프렌즈">
+			</div>
+		</div>
+
+
+예제24)아래 조건을 읽고 조건에 부합하도록 jQuery를 작성하세요.
+조건1. 각각의 버튼을 클릭했을 때 클래스(클래스명 : effect)를 추가 또는 삭제하여 기존 이미지에 효과를 부여 또는 제거가 될 수 있도록 구성하세요.
+(click() 이벤트와 addClass(), removeClass() 메서드를 이용)
+
+		<style>
+				.test_24 img{width: 300px; margin:20px; transition:1s;}
+				.test_24 img.effect{box-shadow:0 0 8px #55ffff;}
+		</style>
+		<div class="test_24">
+			<div class="btn_frame">
+				<button class="effect_add">효과 넣기</button>
+				<button class="effect_remove">효과 빼기</button>
+			</div>
+			<div class="img_frame">
+				<img id="band" src="img/kakao_band.jpg" alt="카카오밴드">
+			</div>
+		</div>
+	
+
+예제25)아래 조건을 읽고 조건에 부합하도록 jQuery를 작성하세요.
+조건1. 하단의 버튼을 클릭했을 때 기존 이미지에서 effect 클래스 유무를 판단(if~else 조건문 구성) 후, 클래스(클래스명 : effect)를 추가 또는 삭제를 통해 효과를 부여 또는 제거가 될 수 있도록 구성하세요.
+(click() 이벤트와 hasClass(), addClass(), removeClass() 메서드를 이용)
+
+		<style>
+			.test_25 img{width: 300px; margin:20px; transition:1s;}
+			.test_25 img.effect{box-shadow:0 0 8px #ffff00;}
+		</style>
+		<div class="test_25">
+			<div class="btn_frame">
+				<button class="effect_confirm">효과 적용 및 삭제</button>
+			</div>
+			<div class="img_frame">
+				<img id="refresh" src="img/kakao_refresh.jpg" alt="카카오 한강 나들이">
+			</div>
+		</div>

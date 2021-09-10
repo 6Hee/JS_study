@@ -1,0 +1,20 @@
+.test_20 img{width: 200px;}
+
+.test_21 img{width: 120px;}
+
+.test_22 .img_frame{font-size:0;}
+.test_22 img{width: 300px;}
+
+.test_23 .img_frame{font-size:0;}
+.test_23 img{width: 300px;}
+
+
+
+.test_24 img{width: 300px; margin:20px; transition:1s;}
+.test_24 img.effect{box-shadow:0 0 8px #55ffff;}
+
+
+.test_25 img{width: 300px; margin:20px; transition:1s;}
+.test_25 img.effect{box-shadow:0 0 8px #ffff00;}
+
+
