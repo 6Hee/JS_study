@@ -61,5 +61,179 @@
         <img src="./img/Character_3.png" alt="">
     </div>
 
+
+    <h4>컨텐츠 페이지 구성하기</h4>
+    <div class="kakao_box">
+        <!--
+        <div class="kakao_cont">
+            <img src="./img/kakao_01.jpg" alt="">
+            <p>카카오 소풍</p>
+        </div>
+        <div class="kakao_cont">
+            <img src="./img/kakao_01.jpg" alt="">
+            <p>카카오 소풍</p>
+        </div>
+        -->
+    </div>
+
+
+
+    <h4>자동 회전 슬라이드(좌측으로 이동하는 슬라이드)</h4>
+    <h4>애니메이션 효과부여 $("선택자").animate({스타일 선언명 : 스타일 선언값}, 애니메이션 작동 시간, function(){});</h4>
+    <p>애니메이션 작동시간 : 밀리세컨드 단위(1초 = 1000밀리세컨드)</p>
+    <p>function(){ 실행문 } : 콜백함수 => 애니메이션 작동(스타일 적용)이 종료된 후 함수를 실행하라</p>
+
+
+    <img class="test_animation" src="./img/kakao_01.jpg" alt="">
+    <p>이미지가 우측으로 이동한 다음에 이동이 종료되면 테두리 색상을 부여</p>
+
+
+
+    <h4>버튼 클릭에 의한 이미지의 이동</h4>
+    <button class="backBtn">후진 이동</button>
+    <button class="goBtn">전진 이동</button>
+    <div class="car_move">
+        <img src="./img/car.png" style="height:80px" alt="">
+    </div>
+
+
+
+    <h4>자동 회전 슬라이드(좌측으로 이동하는 슬라이드)</h4>
+    <p>setInterval(function(){},작동간격시간) + animate() 효과 메서드</p>
+    <p>자리가 변경되는 슬라이드의 경우, 스타일에서 nth-child(n)는 절대 사용하지 말 것!</p>
+    <div id="slider1">
+        <ul>
+            <li class="slide_01"><h3>1</h3></li>
+            <li class="slide_02"><h3>2</h3></li>
+            <li class="slide_03"><h3>3</h3></li>
+            <li class="slide_04"><h3>4</h3></li>
+        </ul>
+    </div>
+
+
+    <h4>자동 회전 슬라이드(우측으로 이동하는 슬라이드)</h4>
+    <div id="slider2">
+        <ul>
+            <li class="slide_01"><h3>1</h3></li>
+            <li class="slide_02"><h3>2</h3></li>
+            <li class="slide_03"><h3>3</h3></li>
+            <li class="slide_04"><h3>4</h3></li>
+        </ul>
+    </div>
+
+
+
+    <h3>탭박스 공간 : 탭버튼에 의한 이미지 또는 콘텐츠를 하나의 공간에서 변경하면서 보여주는 기능 - 모바일처럼 좁은 공간에서 활용도가 매우 높은 편</h3>
+
+    <div class="tab_space">
+        <div class="tab_btn">
+            <ul>
+                <li rel="tab1" class="activeBtn"><a href="#">Interior-1</a></li>
+                <li rel="tab2"><a href="">Interior-2</a></li>
+                <li rel="tab3"><a href="">Interior-3</a></li>
+            </ul>
+        </div>
+        <div class="tab_cont">
+            <div class="tab_box tab1 activeCont">
+                <div class="tab_img"><h3>1</h3></div>
+                <div class="tab_img"><h3>2</h3></div>
+                <div class="tab_img"><h3>3</h3></div>
+            </div>
+            <div class="tab_box tab2">
+                <div class="tab_img"><h3>4</h3></div>
+                <div class="tab_img"><h3>5</h3></div>
+                <div class="tab_img"><h3>6</h3></div>
+            </div>
+            <div class="tab_box tab3">
+                <div class="tab_img"><h3>7</h3></div>
+                <div class="tab_img"><h3>8</h3></div>
+                <div class="tab_img"><h3>9</h3></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <h3>clone() 메서드 : 선택한 요소를 복제 - get 방식</h3>
+    <div class="clone_method">
+        <p>로마의 휴일</p>
+        <p>라이언 일병 구하기</p>
+        <p>퍼시픽</p>
+        <p>극한직업</p>
+    </div>
+
+    <h3>empty() 메서드 : 하위요소를 삭제한다.</h3>
+    <div class="empty_method">
+        <p>HTML5</p>
+        <p>CSS3</p>
+    </div>
+
+
+    <h3>remove() 메서드 : 본인을 포함한 하위요소까지 모두 삭제한다.</h3>
+    <div class="remove_method">
+        <p>Javascript</p>
+        <p>jQuery</p>
+    </div>
+
+    <h3>
+        $("선택자").replaceWith("새요소") <br>
+        $("새요소").replaceAll("선택자") <br>
+        :선택한 요소를 교체한다.
+    </h3>
+    <div class="replace_method">
+        <ul>
+            <li>최민식</li>
+            <li>이병헌</li>
+            <li>송강호</li>
+            <li>안내상</li>
+        </ul>
+    </div>
+
+
+    <h3>
+        wrap() : 선택한 요소를 각각 감쌈 <br>
+        wrapAll() : 선택한 요소를 한꺼번에 감쌈 <br>
+        wrapInner() : 선택한 요소의 하위요소를 새로운 요소로 감쌈
+        unwrap() : 선택한 요소의 부모요소를 제거
+    </h3>
+
+    <div class="wrap_method">
+        <ul>
+            <li><span>레드슈즈</span></li>
+            <li><span>겨울왕국</span></li>
+            <li><span>신데렐라</span></li>
+            <li><span>소피아</span></li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <div class="wrapAll_method">
+        <p>여권</p>
+        <p>여행자 보험</p>
+        <p>환전된 여행자금</p>
+    </div>
+
+    <hr>
+
+    <div class="wrapInner_method">
+        <ul>
+            <li>해외여행</li>
+            <li>국내여행</li>
+            <li>추천여행</li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <div class="unwrap_method">
+        <div class="travel">
+            <p>해외여행</p>
+            <p>국내여행</p>
+            <p>추천여행</p>
+        </div>
+    </div>
+
+
 </body>
 </html>
