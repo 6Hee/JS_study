@@ -1,0 +1,51 @@
+/*common.css*/
+@charset "utf-8";
+
+*{box-sizing: border-box;}
+html, body{margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6, p{margin: 0;}
+ul, ol{margin: 0; padding: 0; list-style: none;}
+a{text-decoration: none;}
+
+/*#header part CSS*/
+#header{}
+#header header{}
+#header header{
+    height: 60px;
+    background: #ccc;
+} 
+#header header .wrap{
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#header header .wrap .logo{}
+#header header .wrap .logo a{
+    display: block;
+    font-size: 20px;
+    color: 333;
+}
+#header header .wrap nav{}
+#header header .wrap nav ul{display: flex;}
+#header header .wrap nav ul li{
+    margin: 0 15px;
+}
+#header header .wrap nav ul li a{
+    font-size: 16px;
+    display: block;
+    line-height: 60px;
+    color: #555;
+}
+#header header .wrap nav ul li.active a{
+    color: #f00;
+}
+/*#footer part CSS*/
+#footer{}
+#footer footer{
+    background: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
