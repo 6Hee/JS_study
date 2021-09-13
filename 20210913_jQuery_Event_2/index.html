@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - 이벤트</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/script.js"></script>
+</head>
+<body>
+    
+    <h3>클릭이벤트</h3>
+    <div class="click_evt">
+        <ul>
+            <li><a href="javascript:void(0);">00 그룹소개</a></li>
+            <li><a href="javascript:void(0);">00 그룹연혁</a></li>
+            <li><a href="javascript:void(0);">00 그룹구성</a></li>
+            <li><a href="javascript:void(0);">00 그룹위치</a></li>
+        </ul>
+        <p class="complete">클릭한 곳의 결과값 넣기</p>
+    </div>
+
+    <h4>클릭 이벤트 주의 사항 - a 태그 내부에 href 속성에 의한 페이지 새로고침 현상을 막아야 하는 경우</h4>
+
+    <p>1. 스크립트 코드 내부에서 막는 방법 1 : 클릭 이벤트 종료 직전에 return false; 라는 문구를 작성</p>
+
+    <p>2. 스크립트 코드 내부에서 막는 방법 2 : 클릭 이벤트에 의한 내부 문구를 실행하기 직전에 매개변수 (e 또는 event)를 설정한 후, e.preventDefault(); | event.preventDefault(); 라고 작성</p>
+
+    <p>3. HTML 구문상에서 클릭할 요소의 href 속성값으로 내장 스크립트로 막는다. href= "javascript:void(0);" 작성</p>
+
+    <hr>
+
+    <h3>마우스 관련 이벤트 : mouseover, mouseout, hover(mouseenter, mouseleave), mousemove</h3>
+
+    <div class="mouse_evt">
+        <div class="ch_img"></div>
+    </div>
+
+    <h4>hover 이벤트를 활용한 상단 헤더 구성하기(주메뉴, 서브메뉴) + slideDown()/slideUp() 효과 메서드</h4>
+
+    <div class="hover_menu">
+        <div class="logo">
+            <a href="">LOGO</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="">About</a>
+                    <ul>
+                        <li><a href="">Introduce</a></li>
+                        <li><a href="">Skills</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Project</a>
+                    <ul>
+                        <li><a href="">Hanhwa Eng</a></li>
+                        <li><a href="">SK Inno</a></li>
+                        <li><a href="">LG Electronics</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Portfolio</a>
+                    <ul>
+                        <li><a href="">Graphic</a></li>
+                        <li><a href="">Publishing</a></li>
+                        <li><a href="">Develop</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Contact</a>
+                    <ul>
+                        <li><a href="">E-Mail</a></li>
+                        <li><a href="">Phone</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <h4>mousemove() 이벤트 : 마우스가 움직였을 때 이벤트가 발생</h4>
+    <div class="mousemove_evt">
+        <h2>Title</h2>
+        <div class="trace_circle"></div>
+    </div>
+
+
+
+</body>
+</html>

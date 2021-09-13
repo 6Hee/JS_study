@@ -1,0 +1,109 @@
+@charset "utf-8";
+
+*{box-sizing: border-box;}
+html, body{margin: 0; padding: 0;}
+h1, h2,h3, h4, h5, h6, p{margin: 0;}
+ul, ol{margin: 0; padding: 0; list-style: none;}
+a{text-decoration: none;}
+
+
+.mouse_evt .ch_img{
+    width: 200px; 
+    height: 200px; 
+    background-size: cover; 
+    background-position: 50% 50%; 
+    background-image: url(../img/wizard.png); 
+    transition: background-image 0.5s;}
+
+.mouse_evt .ch_img.over{
+    background-image: url(../img/goblin.png);
+}
+
+.hover_menu{
+    height: 60px; 
+    background: #ddd; 
+    padding: 0 20px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start; 
+    flex-wrap: wrap; 
+    margin-bottom: 200px;
+}
+
+.hover_menu .logo{}
+.hover_menu .logo a{
+    display: block;
+    font-size: 24px; 
+    color:#333; 
+    line-height: 60px;
+}
+
+.hover_menu nav{}
+.hover_menu nav > ul{
+    display: flex; 
+    text-align: center;
+}
+.hover_menu nav > ul > li{
+    margin: 0 10px;
+}
+.hover_menu nav > ul > li:last-child{
+    margin-right: 0;
+}
+.hover_menu nav > ul > li > a{
+    display: block; 
+    font-size: 17px; 
+    color:#555; 
+    background: #bbb; 
+    line-height: 60px; 
+    padding: 0 30px;
+}
+
+.hover_menu nav > ul > li > ul{
+    background: #e1e1e1;
+    display: none;
+}
+
+.hover_menu nav > ul > li > ul > li{}
+.hover_menu nav > ul > li > ul > li > a{
+    display: block; 
+    line-height: 40px; 
+    font-size: 15px; 
+    color:#777;
+}
+
+
+
+
+
+.mousemove_evt{
+    width: 100%;
+    height: 80vh;
+    background: #ffa;
+    margin-bottom: 10vh;
+    overflow: hidden;
+    position: relative;
+    cursor: none;
+}
+.mousemove_evt h2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1;
+    font-size: 40px;
+    color: #555;
+    z-index: 1;
+}
+.mousemove_evt:hover .trace_circle{
+    position: fixed;
+    top: 0; left: 0;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: rgba(255, 0, 0, 0.4);
+    transform: translate(-50%, -50%);
+    transition: transform 0.5s;
+    pointer-events: none;
+}
+.mousemove_evt .trace_circle.active{
+    transform: translate(-50%, -50%) scale(2);
+}
