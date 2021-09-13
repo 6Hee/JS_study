@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+*{box-sizing: border-box;}
+html, body{margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6, p{margin: 0;}
+ul, ol{margin: 0; padding: 0; list-style: none;}
+a{text-decoration: none;}
+
+
+
+.content_calc{
+    width: 400px;
+    height: 300px;
+    background: #faf;
+}
+.padding_calc{
+    width: 400px; height: 300px;
+    padding: 20px;
+    background: #5bf;
+}
+
+.border_calc{
+    width: 400px; height: 300px;
+    padding: 20px; 
+    border: 10px solid #f00;
+    background: #fa0;
+}
+
+.ch_cover{
+    width: 25%;
+    height: 300px;
+    background-image: url(../img/kakao_01.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+    margin-bottom: 50px;
+}
+
+.position_method{
+    width: 400px; height: 300px; 
+    background: #09f; 
+    margin-left: 100px; 
+    position: relative;}
+.position_method .inbox{
+    position: absolute; 
+    top:40px; left:60px; 
+    width: 100px; height: 100px; 
+    background: #f80;
+}
+
+.offset_method{
+    width: 400px; height: 300px; 
+    background: #09f; 
+    margin-left: 100px; 
+    position: relative;
+}
+.offset_method .inbox{
+    position: absolute; 
+    top:40px; left:60px; 
+    width: 100px; height: 100px; 
+    background: #f80;
+}
