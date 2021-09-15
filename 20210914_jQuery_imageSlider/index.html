@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image Slider</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/script.js"></script>
+</head>
+<body>
+    
+    <!--
+        -기본 이미지 슬라이드 6가지
+        -복합슬라이더 기초
+        -Gmarket 메인 슬라이더
+        -fadeIn 방식 복합 슬라이더
+    -->
+
+    <h1>기초 슬라이더(자동 - setInterval() 함수적용)</h1>
+    <h2>#1. 좌측으로 이동하는 이미지 슬라이더(width : 100%; height : 400px;) - 4장</h2>
+    <nav class="slider_01">
+        <ul>
+            <li class="slide_01"><p>1</p></li>
+            <li class="slide_02"><p>2</p></li>
+            <li class="slide_03"><p>3</p></li>
+            <li class="slide_04"><p>4</p></li>
+        </ul>
+    </nav>
+
+
+
+    <h2>#2. 우측으로 이동하는 이미지 슬라이더(width : 100%; height : 400px;) - 4장</h2>
+    <nav class="slider_02">
+        <ul>
+            <li class="slide_01"><p>1</p></li>
+            <li class="slide_02"><p>2</p></li>
+            <li class="slide_03"><p>3</p></li>
+            <li class="slide_04"><p>4</p></li>
+        </ul>
+    </nav>
+
+
+
+    <h2>#3. 상방향으로 이동하는 이미지 슬라이더(width : 100%; height : 400px;) - 4장</h2>
+    <nav class="slider_03">
+        <ul>
+            <li class="slide_01"><p>1</p></li>
+            <li class="slide_02"><p>2</p></li>
+            <li class="slide_03"><p>3</p></li>
+            <li class="slide_04"><p>4</p></li>
+        </ul>
+    </nav>
+
+
+    <h2>#4. 하방향으로 이동하는 이미지 슬라이더(width : 100%; height : 400px;) - 4장</h2>
+    <nav class="slider_04">
+        <ul>
+            <li class="slide_01"><p>1</p></li>
+            <li class="slide_02"><p>2</p></li>
+            <li class="slide_03"><p>3</p></li>
+            <li class="slide_04"><p>4</p></li>
+        </ul>
+    </nav>
+
+    <h2>#5. 페이드인 이미지 슬라이더(width : 100%; height : 400px;) - 4장</h2>
+
+    <nav class="slider_05">
+        <ul>
+            <li class="slide_01 active"><p>1</p></li>
+            <li class="slide_02"><p>2</p></li>
+            <li class="slide_03"><p>3</p></li>
+            <li class="slide_04"><p>4</p></li>
+        </ul>
+    </nav>
+    <h2>#6. 페이드인 이미지 슬라이더(즉시 실행함수 사용)(width : 100%; height : 400px;) - 4장</h2>
+
+    <nav class="slider_06">
+        <ul>
+            <li class="slide_01"><p>1</p></li>
+            <li class="slide_02"><p>2</p></li>
+            <li class="slide_03"><p>3</p></li>
+            <li class="slide_04"><p>4</p></li>
+        </ul>
+    </nav>
+
+    <h1>응용 슬라이더(자동 - setInterval() 함수 적용)</h1>
+    <h3>가로방향으로 이동하는 슬라이드</h3>
+    <p>1. 자동 슬라이드 기능</p>
+    <p>2. 마우스 오버시 자동 슬라이드 기능 일시정지</p>
+    <p>3. 바튼에 의해 통제되는 재생과 정지 기능</p>
+    <p>4. 이전 화살표 / 다음 화살표 기능</p>
+    <p>5. 현재 슬라이드 페이지에 대한 번호 표기(서수)</p>
+    <p>6. 슬라이드 페이저 적용(view만 적용)</p>
+    <p>7. 슬라이드 대기 진행시간 표기</p>
+    
+    <header>
+        <div class="wrap">
+            <div class="logo"><a href="">LOGO</a></div>
+            <nav>
+                <ul>
+                    <li><a href="">Intro</a>
+                        <ul>
+                            <li><a href="">History</a></li>
+                            <li><a href="">Location</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Story</a></li>
+                    <li><a href="">Project</a>
+                        <ul>
+                            <li><a href="">Hanhwa eng</a></li>
+                            <li><a href="">SK Innovation</a></li>
+                            <li><a href="">Seoul Metro</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="slider_01">
+        <div class="slider">
+            <ul>
+                <li class="slide_01">
+                    <div class="slide_cont">
+                        <h3>1. 가족과 함께 떠나는 추천 여행지</h3>
+                        <a href="">자세히 보기</a>
+                    </div>
+                </li>
+                <li class="slide_02">
+                    <div class="slide_cont">
+                        <h3>2. 연인과 함께 떠나는 추천 여행지</h3>
+                        <a href="">자세히 보기</a>
+                    </div>
+                </li>
+                <li class="slide_03">
+                    <div class="slide_cont">
+                        <h3>3. 추억을 간직하는 추천 여행지</h3>
+                        <a href="">자세히 보기</a>
+                    </div>
+                </li>
+                <li class="slide_04">
+                    <div class="slide_cont">
+                        <h3>4. 오지탐험 추천 여행지</h3>
+                        <a href="">자세히 보기</a>
+                    </div>
+                </li>
+                <li class="slide_05">
+                    <div class="slide_cont">
+                        <h3>5. 단풍을 만끽하는 추천 여행지</h3>
+                        <a href="">자세히 보기</a>
+                    </div>
+                </li>
+            </ul>
+
+            <button class="slider_play">■<span>(정지)</span></button>
+            <!--▶<span>(재생)</span>-->
+        </div>
+    </section>
+
+
+</body>
+</html>
