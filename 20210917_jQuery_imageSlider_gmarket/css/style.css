@@ -1,0 +1,201 @@
+@charset "utf-8";
+*{box-sizing: border-box;}
+html, body{margin: 0; padding: 0;}
+section{display: block; margin-bottom: 40px;}
+h1, h2, h3, h4, h5, h6, p{margin: 0;}
+ul, ol{margin: 0; padding: 0; list-style: none;}
+a{text-decoration: none;}
+
+
+#slider{
+    width: 100%;
+    height: 400px;
+    background: #ddd;
+    position: relative;
+    overflow: hidden;
+}
+#slider:before{
+    content: "";
+    position: absolute;
+    width: 10%; height: 100%;
+    top: 0; left: 0;
+    background-color: rgba(0,0,255,0.5);
+    z-index: 1;
+}
+#slider:after{
+    content: "";
+    position: absolute;
+    width: 10%; height: 100%;
+    top: 0; left: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1;
+}
+#slider .slider_space{
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    background: #ffc;
+    position: relative;
+}
+#slider .slider_space ul{
+    width: 1000%; height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -200%;
+}
+#slider .slider_space ul li{
+    width: 10%; height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#slider .slider_space ul li.slide_01{background-image: url(../img/slide1.jpg);}
+#slider .slider_space ul li.slide_02{background-image: url(../img/slide2.jpg);}
+#slider .slider_space ul li.slide_03{background-image: url(../img/slide3.jpg);}
+#slider .slider_space ul li.slide_04{background-image: url(../img/slide4.jpg);}
+#slider .slider_space ul li.slide_05{background-image: url(../img/slide5.jpg);}
+#slider .slider_space ul li.slide_06{background-image: url(../img/slide6.jpg);}
+#slider .slider_space ul li.slide_07{background-image: url(../img/slide7.jpg);}
+#slider .slider_space ul li.slide_08{background-image: url(../img/slide8.jpg);}
+#slider .slider_space ul li.slide_09{background-image: url(../img/slide9.jpg);}
+#slider .slider_space ul li.slide_10{background-image: url(../img/slide10.jpg);}
+
+
+
+#slider .slider_space ul li h2{
+    font-size: 120px;
+    color: #fff;
+    text-shadow: 0 0 5px #f00;
+}
+
+
+
+#slider .slider_space .bottom_info{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+}
+#slider .slider_space .bottom_info button{
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+#slider .slider_space .bottom_info button img{
+    display: block;
+    height: 16px;
+}
+#slider .slider_space .bottom_info .num_box{
+    padding-left: 10px;
+    height: 40px;
+    display: flex;
+}
+#slider .slider_space .bottom_info .num_box .cur_num{
+    height: 100%;
+    display: flex;
+    border-radius: 20px 0 0 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 0 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+#slider .slider_space .bottom_info .num_box .cur_num span{
+    min-width: 18px;   /*글자폭에 따른 크기 변화 수정*/
+}
+
+#slider .slider_space .bottom_info .num_box .slidePop{
+    height: 100%;
+    margin-left: 4px;
+    padding: 0 10px;
+    border-radius: 0 20px 20px 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 30px;
+    line-height: 34px;
+    cursor: pointer;
+}
+
+
+#slider .slider_space .carret{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+#slider .slider_space .prev{
+    left: -40px;
+}
+#slider .slider_space .next{
+    right: -40px;
+}
+#slider .slider_space .carret img{
+    height: 40px;
+}
+
+
+
+.dark_bg{
+    position: fixed;
+    width: 100%; height: 100%;
+    top: 0; left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    opacity: 0;
+}
+
+.dark_bg.active{
+    z-index: 3;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.popup{
+    position: fixed;
+    width: 100%;
+    top: 0; left: 0;
+    z-index: -1;
+    opacity: 0;
+}
+
+.popup.active{
+    z-index: 3;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.popup .popup_space{
+    position: relative; 
+    width: 90%; 
+    margin: 0 auto;
+}
+
+.popup .popup_space .close{
+    position: absolute;
+    width: 40px; height: 40px;
+    top: 0; right: -40px;
+    display: block;
+    color: #fff;
+    background: #000;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.popup .popup_space ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.popup .popup_space ul li{width: 49%;}
+.popup .popup_space ul li a{display: block;}
+.popup .popup_space ul li a img{display: block; width: 100%;}

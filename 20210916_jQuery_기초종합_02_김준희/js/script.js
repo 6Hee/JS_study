@@ -9,6 +9,7 @@ $(document).ready(function(){
 
 
     //실습 2
+    /*
     $("#ex_02").click(function(){
 
         $("#ex_02_tit").text("전체해제");
@@ -22,9 +23,25 @@ $(document).ready(function(){
             $("p input[id *= item]").attr("checked", false);
         }
     });
+    */
+    $("#ex_02").click(function(){
+        var $chk_state = $(this).is(":checked");
+        console.log($chk_state);
+        //true : 체크된 상태 //false : 체크가 풀린 상태
+        if($chk_state == true){
+            //$("input[name*='item_0']").attr("checked", "checked");
+            //$("input[name*='item_0']").attr("checked", true);
+            $("input[name*='item_0']").prop("checked", true);
+            $("#ex_02_tit").text("전체해제");
+        }else{
+            $("input[name*='item_0']").prop("checked", false);
+            $("#ex_02_tit").text("전체선택");
+        }
+    });
 
 
     //실습 3
+    /*
     $(".ch_03_frame .ch_03_img").each(function(index){
         console.log(index);
 
@@ -34,10 +51,17 @@ $(document).ready(function(){
             $(".ch_03_frame .ch_03_img:eq("+index+")").css("opacity", "0");
         });
     });
-    
+    */
+
+    $(".ch_03_frame span").click(function(){
+        $(this).closest(".ch_03_img").fadeOut();
+    });
+
+
 
 
     //실습 4//////////////////////////
+    /*
     $("#ex_04 .go").click(function(){
 
         $("#ex_04 .ch_04_01 img").stop().animate({
@@ -50,8 +74,31 @@ $(document).ready(function(){
             "margin-left":"400px"
         }, 1500)
     })
+    */
+   var $cur_location = 0;
+   $("#ex_04 .go").click(function(){
+    /*$(".ch_04_01 img").stop().animate({
+        "left":($cur_location -= 100) + "px"
+    }, 1500);*/
+    $(".ch_04_01 img").stop().animate({
+        "left":"-=100px"
+    }, 1500);
+    //[CSS 상에서] 1회 클릭시 left: -100px //2회 클릭시 left: -200px // left -= 100
+   });
+   $("#ex_04 .back").click(function(){
+    /*$(".ch_04_01 img").stop().animate({
+        "left":($cur_location += 100) + "px"
+    }, 1500);*/
+    $(".ch_04_01 img").stop().animate({
+        "left":"+=100px"
+    }, 1500);
+   });
+
+
+
 
     //실습 5//////////////////////////
+    /*
     var a = 0;
     var b = 2;
     $("#ex_05 .tab_btn > div").click(function(){
@@ -83,6 +130,17 @@ $(document).ready(function(){
             "right":"unset"
         });
     });
+    */
+   $("#ex_05 .tab_btn div").click(function(){
+    var $indexBtn = $(this).index(); //0 | 1
+
+    $("#ex_05 .tab_btn div").removeClass("activeBtn");
+    $(this).addClass("activeBtn");
+
+    $(".bg-bk").stop().animate({
+        "left": (50 * $indexBtn) + "%"
+    }, 500);
+   });
 
 
     
