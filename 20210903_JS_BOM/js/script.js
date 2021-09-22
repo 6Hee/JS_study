@@ -118,4 +118,4 @@ $cur_availHeight.textContent = $s_availHeight + "px";
 
 console.log(location.port);
 //ftp의 기본 포트번호 21
-/sql의 기본 포트번호 8800
+//sql의 기본 포트번호 8800

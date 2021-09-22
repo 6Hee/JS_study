@@ -1,0 +1,296 @@
+@charset "utf-8";
+*{box-sizing: border-box;}
+html, body{margin: 0; padding: 0;}
+section{display: block; margin-bottom: 40px;}
+h1, h2, h3, h4, h5, h6, p{margin: 0;}
+ul, ol{margin: 0; padding: 0; list-style: none;}
+a{text-decoration: none;}
+
+
+
+
+#ex_00{
+    width:400px; 
+    height:240px; 
+    margin:0 auto; 
+    overflow:hidden;
+}
+#ex_00 .slider{
+    width:100%; 
+    height:100%; 
+    margin:0; 
+    padding:0;
+}
+#ex_00 .slider li{
+    width:100%; 
+    height:100%; 
+    list-style:none; 
+    float:left; 
+    position:relative;
+}
+#ex_00 .slider li img{width:100%;}
+#ex_00 .slider li span{
+    position:absolute; 
+    right:10px; top:10px; 
+    color:#fff; 
+    text-shadow:0 0 2px #000;
+}
+
+
+#ex_01{
+    width:300px; 
+    height:160px; 
+    margin:0 auto; 
+    overflow:hidden;
+}
+#ex_01 .slider{
+    width:400%; 
+    height:100%; 
+    margin:0; 
+    padding:0; 
+    display:flex; 
+    flex-wrap:wrap;
+}
+#ex_01 .slider li{
+    width:25%; height:100%; 
+    list-style:none; 
+    position:relative;
+}
+#ex_01 .slider li img{width:100%;}
+#ex_01 .slider li span{
+    position:absolute; 
+    right:10px; 
+    bottom:10px;
+}
+
+
+#ex_02{
+    width:300px; 
+    height:160px; 
+    margin:0 auto; 
+    /*overflow:hidden;*/
+}
+#ex_02 .slider{
+    width:400%; 
+    height:100%; 
+    margin:0; 
+    padding:0; 
+    display:flex; 
+    flex-wrap:wrap;
+}
+#ex_02 .slider li{
+    width:25%; 
+    height:100%; 
+    list-style:none; 
+    position:relative;
+}
+#ex_02 .slider li img{width:100%;}
+#ex_02 .slider li span{
+    position:absolute;
+    right:10px; bottom:10px;
+}
+
+
+#ex_03{
+    width:300px; 
+    height:200px; 
+    position:relative; 
+    margin-left:50px;
+}
+#ex_03 .slides{
+    width:400%; 
+    height:100%; 
+    margin:0; 
+    padding:0; 
+    list-style:none;
+    display: flex; 
+    flex-wrap:wrap;
+}
+#ex_03 .slides>li{
+    width:25%; 
+    height:150px; 
+    position:relative;
+}
+#ex_03 .slides li span{
+    position:absolute; 
+    top:10px; right:10px; 
+    color:#fff; 
+    text-shadow:0 0 2px #000;
+}
+#ex_03 .slides li{
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+#ex_03 .s-1{background-image: url(../img/img_01.jpg);}
+#ex_03 .s-2{background-image: url(../img/img_02.jpg);}
+#ex_03 .s-3{background-image: url(../img/img_03.jpg);}
+#ex_03 .s-4{background-image: url(../img/img_04.jpg);}
+
+#ex_04{
+    width:600px; height:400px; 
+    margin:0 auto; 
+    position:relative;
+    overflow:hidden;
+}
+#ex_04 .slides{
+    width:400%; 
+    height:100%; 
+    margin:0; 
+    padding:0; 
+    list-style:none; 
+    display: flex; 
+    flex-wrap:wrap;
+}
+#ex_04 .slides li{
+    width:25%; 
+    height:300px; 
+    position:relative;
+}
+#ex_04 .slides li span{
+    position:absolute; 
+    top:10px; right:10px; 
+    color:#fff; 
+    text-shadow:0 0 2px #000;
+}
+#ex_04 .slides li{
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+#ex_04 .s-1{background-image: url(../img/img_01.jpg);}
+#ex_04 .s-2{background-image: url(../img/img_02.jpg);}
+#ex_04 .s-3{background-image: url(../img/img_03.jpg);}
+#ex_04 .s-4{background-image: url(../img/img_04.jpg);}
+
+
+
+#ex_05{
+    width:600px; 
+    height:300px; 
+    margin:0 auto; 
+    position:relative; 
+    overflow:hidden;
+}
+#ex_05 .slides{
+    width:400%; 
+    height:100%; 
+    margin:0; 
+    padding:0; 
+    list-style:none; 
+    display: flex; 
+    flex-wrap:wrap ;
+}
+#ex_05 .slides li{
+    width:25%; 
+    height:300px; 
+    position:relative;
+}
+#ex_05 .slides li span{
+    position:absolute; 
+    top:10px; right:10px; 
+    color:#fff; 
+    text-shadow:0 0 2px #000;
+}
+#ex_05 .slides li{
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+#ex_05 .s-1{background-image: url(../img/img_01.jpg);}
+#ex_05 .s-2{background-image: url(../img/img_02.jpg);}
+#ex_05 .s-3{background-image: url(../img/img_03.jpg);}
+#ex_05 .s-4{background-image: url(../img/img_04.jpg);}
+
+
+
+#ex_06{
+    width:600px; 
+    height:300px; 
+    margin:0 auto; 
+    position:relative;
+    overflow:hidden;
+}
+#ex_06 .slides{
+    width:400%; 
+    height:100%; 
+    margin:0; 
+    padding:0; 
+    list-style:none; 
+    display: flex; 
+    flex-wrap: wrap;
+}
+#ex_06 .slides li{
+    width:25%; 
+    height:300px; 
+    position:relative;
+}
+#ex_06 .slides li span{
+    position:absolute; 
+    top:10px; right:10px; 
+    color:#fff; 
+    text-shadow:0 0 2px #000;
+}
+#ex_06 .slides li{
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+#ex_06 .s-1{background-image: url(../img/img_01.jpg);}
+#ex_06 .s-2{background-image: url(../img/img_02.jpg);}
+#ex_06 .s-3{background-image: url(../img/img_03.jpg);}
+#ex_06 .s-4{background-image: url(../img/img_04.jpg);}
+
+
+
+#ex_07{
+    width:800px; 
+    height:400px; 
+    margin:0 auto; 
+    padding-bottom: 40px; 
+    position:relative; 
+    overflow:hidden;
+}
+#ex_07 .slider_panel{
+    width:400%; height: 100%; 
+    margin:0; 
+    padding:0; 
+    list-style: none;
+    display: flex; 
+    flex-wrap: wrap;
+}
+#ex_07 .slider_panel li{
+    width: 25%; 
+    height: 100%; 
+    background-size: cover; 
+    background-position: 50% 50%;
+}
+#ex_07 .slider_panel li:nth-child(1){background-image: url(../img/img_01.jpg);}
+#ex_07 .slider_panel li:nth-child(2){background-image: url(../img/img_02.jpg);}
+#ex_07 .slider_panel li:nth-child(3){background-image: url(../img/img_03.jpg);}
+#ex_07 .slider_panel li:nth-child(4){background-image: url(../img/img_04.jpg);}
+
+#ex_07 .control_panel{
+    position:absolute;
+    width:100%; 
+    bottom: 10px; left:50%; 
+    transform: translateX(-50%); 
+	text-align:center; 
+    margin:0; padding:0; 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    list-style: none; 
+    z-index: 1;
+}
+#ex_07 .control_button{
+    width:20px; height:20px;
+    background:#999; 
+    border-radius:50%;
+    margin: 0 10px; 
+    cursor:pointer; 
+}
+#ex_07 .control_button:hover, #ex_07 .control_button.active{
+    background:#aaffff; 
+    box-shadow:0 0 2px #000;
+}
