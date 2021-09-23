@@ -27,6 +27,15 @@ $(document).ready(function(){
     }, 50);
     
 
+    //11~40까지 폰트의 사이즈를 랜덤으로 적용(ceil 또는 floor)
+    var fontRandom = Math.ceil(Math.random()*30) + 10;
+    
+    console.log(fontRandom);
+    
+
+
+
+
 
     //실습 2번
     $("#rv_02").hover(function(){
@@ -133,9 +142,24 @@ $(document).ready(function(){
 
 
 
-
-
-
+    let abc = `
+        <p>
+            <button class="prev_btn">이전</button>
+            <button class="next_btn">다음</button>
+        </p>
+    `;
+    $("#rv_07").prepend(abc);
+    var i = 1;
+    setInterval(function(){
+        i++;
+        $("#rv_07 img").attr({
+            "src":"img/image_"+i+".jpg",
+            "alt":"이미지-"+i
+        });
+        if(i == 10){
+            i = 0;
+        }
+    }, 3000);
 
 
 
