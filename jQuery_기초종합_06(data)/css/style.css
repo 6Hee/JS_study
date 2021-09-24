@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+*{box-sizing: border-box;}
+html, body{margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6, p{margin: 0;}
+ul, ol{margin: 0; padding: 0; list-style: none;}
+a{text-decoration: none;}
+
+
+
+#ex_02{
+    width:800px; 
+    height:800px; 
+    margin:0 auto;
+}
+#ex_02 .logo{
+    width:100%; 
+    height:200px; 
+    margin:0; 
+    padding:0; 
+    font-size:0;
+}
+#ex_02 .logo li{
+    width:50%; 
+    height:100%; 
+    list-style:none; display:inline-block; background-size:cover; 
+    cursor:pointer;
+}
+#ex_02 .animation-p , #ex_02 .animation-d{
+    width:100%; 
+    height:200px; 
+    margin:0; 
+    padding:0; 
+    font-size:0; 
+    display:none;
+}
+#ex_02 .animation-p li,
+#ex_02 .animation-d li{
+    width:33.33%; 
+    height:200px; 
+    list-style:none; 
+	display:inline-block; background-size:cover; 
+    cursor:pointer;
+}
+#ex_02 .sub-box .active{display:block;}
