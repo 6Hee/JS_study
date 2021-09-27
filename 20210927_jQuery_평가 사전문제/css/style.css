@@ -1,0 +1,89 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
+
+*{-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; font-family: 'Noto Sans KR', sans-serif;}
+body{margin: 0; padding: 0;}
+header, section, article, aside, nav, footer{display:block;}
+header:after, section:after, article:after, aside:after, nav:after, footer:after{content:""; display:block; clear:both;}
+ul, ol{margin: 0; padding: 0; list-style: none;}
+h1, h2, h3, h4, h5, h6, p{margin: 0;}
+a{text-decoration: none;}
+.clear{clear:both;}
+/*공통요소끝*/
+
+/*실습 예제 1*/
+#ex_01{}
+#ex_01 .wrap{width:1200px; padding:20px 10px; background: #ccc; font-size: 0; margin:0 auto;}
+#ex_01 .wrap .poster{display: inline-block; width:calc(25% - 20px); padding:20px; background: #fff; margin:0 10px; transition: border-radius 0.5s, box-shadow 0.5s, background 0.5s;}
+#ex_01 .wrap .poster:hover{border-radius:20px 0 20px 0; box-shadow: 0 0 12px rgba(0,0,0,0.6); background-color: #ededed;}
+#ex_01 .wrap .poster .img{height:400px; background-size: cover; background-position: 50% 50%; background-color: #ffbbff;}
+#ex_01 .wrap .poster .title{padding-top: 10px; padding-bottom: 10px; font-size: 19px; color:#555;}
+#ex_01 .wrap .poster .context{font-size: 14px; color:#777;}
+
+
+/*실습예제 2*/
+#ex_02{width:600px; background: #ccddff; padding:10px; margin:0 auto;}
+#ex_02 .wrap{}
+#ex_02 .wrap .main{width:calc(100% - 10px); height:500px; background-size: auto 75%; background-position: 50% 50%; background-color: #fff; background-repeat: no-repeat; margin: 5px; transition: background-image 0.3s;}
+#ex_02 .wrap .thumb{}
+#ex_02 .wrap .thumb ul{font-size: 0; padding: 15px 0 5px;}
+#ex_02 .wrap .thumb ul li{display: inline-block; width:calc(25% - 10px); height: 140px; margin:0 5px; background-size: auto 66.66%; background-position: 50% 50%; background-color: #fff; background-repeat: no-repeat; cursor: pointer; transition: border-radius 0.5s, box-shadow 0.5s, background-color 0.5s;}
+#ex_02 .wrap .thumb ul li.active{border-radius:20px 0 20px 0; box-shadow: 0 0 12px rgba(0,0,0,0.6); background-color: #ededed;}
+
+
+/*실습예제 3*/
+#ex_03{width: 100%; height: 100vh; position: relative; border-top:1px solid #ccc; border-bottom:1px solid #ccc; background-color: #fff;}
+#ex_03 header{position: absolute; top:0; left:0; width: 100%; height: 100px; z-index: 3;}
+#ex_03 header .wrap{width: 90%; height: 100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;}
+
+#ex_03 header .wrap .logo{}
+#ex_03 header .wrap .logo a{}
+#ex_03 header .wrap .logo a img{display: block; height: 70px;}
+#ex_03 header .wrap nav{}
+#ex_03 header .wrap nav ul{display: flex; flex-wrap: wrap;}
+#ex_03 header .wrap nav ul li{margin: 0 15px;}
+#ex_03 header .wrap nav ul li a{display: block; font-size: 14px; color:#aaa;}
+#ex_03 header .wrap nav ul li:hover a{color:#017143;}
+
+#ex_03 section{width: 100%; height: 100%; /*background:linear-gradient(0deg,#9ed5be, transparent);*/ position: relative; overflow: hidden;}
+#ex_03 section .main_bg1{position: absolute; width: 100vh; height: 90vh; background-color: #017143; bottom:-20vh; right:-25vh; border-radius:76% 24% 68% 32% / 73% 18% 82% 27% ; filter:blur(1px); transition: background-color 0.5s;}
+
+#ex_03 section .wrap{width: 90%; height: 100%; margin: 0 auto; position: relative; z-index: 1; display: flex; justify-content:space-between; align-items: center; flex-wrap: wrap;}
+
+#ex_03 section .wrap .main_title{padding-left: 120px; width: 50%;} 
+#ex_03 section .wrap .main_title h3{font-size: 20px; color:#777; padding-bottom: 10px;} 
+#ex_03 section .wrap .main_title h2{font-size: 36px; color:#017143;}
+#ex_03 section .wrap .main_title .bar{width: 80px; height: 2px; background-color: #017143; margin: 20px 0;}
+#ex_03 section .wrap .main_title p{font-size: 17px; word-break: keep-all; color:#999;}
+
+#ex_03 section .wrap .beverage_img{width: 60vh; height: 60vh; background-size: auto 90%; background-position: 50% 50%; background-repeat: no-repeat; /*background-color: #ffa;*/ margin-top: 20vh; background-image: url(../img/ex_03_img/img1.png);  transition: background-image 0.5s;}
+
+#ex_03 section .wrap ol{position: absolute; bottom:5vh; left:50%; transform: translateX(-50%); display: flex;}
+#ex_03 section .wrap ol li{margin: 0 20px; cursor: pointer;}
+#ex_03 section .wrap ol li img{height: 90px; filter:grayscale(100%); transform-origin: center bottom; transition: filter 0.5s, transform 0.5s;}
+#ex_03 section .wrap ol li.active img{filter:grayscale(0%); transform: translateY(-10%) scale(1.1);}
+#ex_03 section .wrap ol li:hover img{filter:grayscale(0%); transform: translateY(-10%) scale(1.1);}
+
+
+/*실습예제 4*/
+#ex_04{width: 100%; height: 700px; overflow: hidden;}
+#ex_04 .slider{width: 100%; height: 100%; position: relative;}
+#ex_04 .slider ul{width: 400%; height: 100%; display: flex; flex-wrap: wrap; margin-left: -100%;}
+#ex_04 .slider ul li{width: 25%; height: 100%; background-size: cover; background-position: 50% 50%;}
+#ex_04 .slider ul li.slide1{background-image: url(../img/marvel_01.jpg);}
+#ex_04 .slider ul li.slide2{background-image: url(../img/marvel_02.jpg);}
+#ex_04 .slider ul li.slide3{background-image: url(../img/marvel_03.jpg);}
+#ex_04 .slider ul li.slide4{background-image: url(../img/marvel_04.jpg);}
+
+#ex_04 .slider .arrow{position: absolute; top:50%; transform:translateY(-50%);}
+#ex_04 .slider .prev{left:20px;}
+#ex_04 .slider .next{right:20px;}
+
+#ex_04 .slider .arrow img{height: 50px;}
+
+#ex_04 .slider ol{position: absolute; bottom: 10px; left:50%; transform: translateX(-50%);display: flex;}
+#ex_04 .slider ol li{width: 24px; height: 24px; margin: 0 10px; background-size: cover; background-position: 50% 50%; background-image: url(../img/marvel_icon.png); cursor: pointer; filter:grayscale(100%);}
+
+#ex_04 .slider ol li.active{filter:grayscale(0%);}

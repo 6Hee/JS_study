@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 보충과제 - each문 구성하기</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+
+    <h3>ex_01. for문과 each문을 활용하여 아래와 같이 이미지 및 타이틀과 텍스트를 넣으세요.</h3>
+
+    <section id="ex_01">
+        <div class="wrap">
+<!--
+            <div class="poster">
+                <div class="img"></div>
+                <div class="title"></div>
+                <div class="context"></div>
+            </div>
+-->
+        </div>
+    </section>
+
+
+
+    <h3>ex_02. each문을 활용하여 아래와 같이 이미지를 넣고, 하단의 썸네일 이미지 클릭시 메인화면이 변경되도록 구성하시오. (썸네일 이미지 클릭시 클릭한 곳의 index 번호를 받아와서 addClass()와 removeClass()에 활용하고 현재 메인화면에 나오는 이미지와 관련한 썸네일이미지에만 active 클래스명을 부여할 것!)</h3>
+
+    <section id="ex_02">
+        <div class="wrap">
+            <div class="main"></div>
+            <div class="thumb">
+                <ul>
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <h3>ex_03. 하단의 썸네일 이미지를 클릭시 제공된 배열 데이터를 활용하여 중앙에 위치한 이미지 및 텍스트, 기타 요소를 교체하시오. (index() 메서드로 클릭 요소의 인덱스 번호를 추출할 것) 클릭한 썸네일 이미지에는 active클래스를 활용하여 현재 화면의 상태를 표현하시오.</h3>
+    <div id="ex_03">
+        
+        <header>
+            <div class="wrap">
+                <div class="logo">
+                    <a href=""><img src="./img/ex_03_img/logo.png" alt=""></a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Menu</a></li>
+                        <li><a href="">What's New</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section id="main_part">
+            <div class="main_bg1"></div>
+            <div class="wrap">
+                <div class="main_title">
+                    <h3>타이틀 부연설명</h3>
+                    <h2>베버리지 음료명</h2>
+                    <div class="bar"></div>
+                    <p>가을나무의 계절의 변화를 표현한 음료
+                        글레이즈드의 새로운 프라푸치노 버전으로
+                        녹차 티라미수 느낌의 프라푸치노 음료</p>
+                </div>
+
+                <div class="beverage_img"></div>
+
+                <ol>
+                    <li class="active"><img src="./img/ex_03_img/thumb1.png" alt=""></li>
+                    <li><img src="./img/ex_03_img/thumb2.png" alt=""></li>
+                </ol>
+            </div>
+        </section>
+    </div>
+
+    <h3>ex_04. 양측의 화살표(이전/다음)를 활용하여 이미지를 좌우로 이동 시키는 슬라이드를 구성하시오. 이동된 이후 하단의 페이저가 연동 되도록 active를 활용하여 현재 슬라이드 구성을 표현하시오. (자동 슬라이드 기능 없음. 클릭 포인트는 화살표만 적용)</h3>
+    <section id="ex_04">
+        <div class="slider">
+            <ul>
+                <li class="slide1" rel="0"></li>
+                <li class="slide2" rel="1"></li>
+                <li class="slide3" rel="2"></li>
+                <li class="slide4" rel="3"></li>
+            </ul>
+
+            <a class="arrow prev" href=""><img src="./img/prev_icon.svg" alt=""></a>
+            <a class="arrow next" href=""><img src="./img/next_icon.svg" alt=""></a>
+
+            <ol>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+    </section>
+
+
+    
+</body>
+</html>
