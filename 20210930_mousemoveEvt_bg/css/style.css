@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+*{box-sizing: border-box;}
+html, body{margin: 0; padding: 0;}
+section{display: block; margin-bottom: 40px;}
+h1, h2, h3, h4, h5, h6, p{margin: 0;}
+ul, ol{margin: 0; padding: 0; list-style: none;}
+a{text-decoration: none;}
+
+
+
+#ex_01{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+#ex_01 .origin{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/original.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-attachment: fixed;
+}
+
+#ex_01 .cover .verticalLine{
+    position: absolute;
+    top: 0; left: 100%;
+    width: 1px;
+    height: 100%;
+    box-shadow: 0 0 1px #ff0;
+    background: #fff;
+}
+
+#ex_01 .cover .verticalLine img{
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#ex_02{
+    width: 80%;
+    height: 80vh;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(#8c6, #afc);
+}
+#ex_02 .sect{
+    width: 100vw;
+    height: 100vh;
+    min-height: 500px;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+#ex_02 .sect .cover{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+}
+#ex_02 .sect .cover .layer{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+}
+#ex_02 .sect .cover .bglayer{
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/2.jpg);
+    background-size: auto 140%;
+    background-position: 50% 50%;
+    opacity: 0.6;
+}
+#ex_02 .sect .cover .frontlayer{
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/1.png);
+    background-size: auto 140%;
+    background-position: 50% 50%;
+}
+
+#ex_02 .overlay{
+    position: absolute;
+    top: 50%; left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+#ex_02 .overlay h1{
+    font-size: 52px;
+    color: #fff;
+    padding-top: 20vh;
+}
+#ex_02 .overlay h3{
+    font-size: 26px;
+    color: #a0d053;
+    padding-top: 20px;
+}
