@@ -13,7 +13,7 @@ $(document).ready(function(){
 
     $("#footer_part").load("./footer.html", function(){
 
-
+        /*
         function resizeEvt(){
             var w_height = $(window).height();
             if(w_height < 830){
@@ -31,6 +31,7 @@ $(document).ready(function(){
             resizeEvt();
             
         });
+        */
 
 
     });
