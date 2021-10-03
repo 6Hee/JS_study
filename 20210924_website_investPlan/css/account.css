@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+
+
+section{
+    height: auto;
+}
+section .wrap{
+    padding: 100px 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+section .wrap .title{
+    font-size: 24px;
+    color: #5c5c5c;
+    margin-bottom: 40px;
+}
+section .wrap input{
+    width: 350px;
+    height: 50px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    border-radius: 4px;
+    border: 1px solid #5c5c5c;
+}
+section .wrap a{
+    width: 200px;
+    height: 35px;
+    background: #5e889e;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 35px;
+    color: #fff;
+}
