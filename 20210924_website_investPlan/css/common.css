@@ -144,9 +144,9 @@ header .wrap .top_btn span{
 }
 
 @keyframes moveCloud{
-    0%{background-position: 0% 70%;}
-    50%{background-position: 100% 70%;}
-    100%{background-position: 0% 70%;}
+    0%{background-position: 0% 100%;}
+    50%{background-position: 100% 100%;}
+    100%{background-position: 0% 100%;}
 }
 
 /*footer part*/
@@ -199,3 +199,4 @@ header .wrap .top_btn span{
 #footer_part footer .wrap .f_sns ul li:nth-child(2) a{background-image: url(../img/sns/iconfinder_twitter_square_gray_107067.svg);}
 #footer_part footer .wrap .f_sns ul li:nth-child(3) a{background-image: url(../img/sns/iconfinder_linkedin_square_gray_107090.svg);}
 #footer_part footer .wrap .f_sns ul li:nth-child(4) a{background-image: url(../img/sns/iconfinder_dribbble_square_gray_107127.svg);}
+
