@@ -152,11 +152,13 @@ header .wrap .top_btn span{
 /*footer part*/
 #footer_part{}
 
+/*
 #footer_part.sticky{
     position: fixed;
     bottom: 0; left: 0;
     width: 100%;
 }
+*/
 
 #footer_part footer{
     height: 160px;

@@ -1,0 +1,99 @@
+@charset "utf-8";
+*{box-sizing: border-box;}
+html, body{margin: 0; padding: 0;}
+section{display: block; margin-bottom: 40px;}
+h1, h2, h3, h4, h5, h6, p{margin: 0;}
+ul, ol{margin: 0; padding: 0; list-style: none;}
+a{text-decoration: none;}
+
+
+#products{
+    padding: 20px 0;
+    background-color: #ddd;
+}
+#products .total_pd{
+    width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+#products .total_pd .sort_button{
+    display: flex;
+    flex-wrap: wrap;
+}
+#products .total_pd .sort_button button{
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 1px solid #777;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #777;
+    font-size: 17px;
+    margin: 0 5px;
+}
+
+#products .total_pd .sort_button button.active{
+    background-color: #555;
+    color: #fff;
+    outline: none;
+}
+
+
+
+.pd_frame{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 20px 10px 0;
+    border-top: 1px solid #777;
+    border-bottom: 1px solid #777;
+    display: flex;
+    flex-wrap: wrap;
+}
+.pd_frame .pd_box{
+    width: calc(25% - 20px);
+    margin: 0 10px 20px;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #777;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+}
+.pd_frame .pd_box .pd_photo{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background-color: #aff;
+    position: relative;
+}
+.pd_frame .pd_box .pd_photo img{
+    width: 100%;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+.pd_frame .pd_box .pd_info{}
+.pd_frame .pd_box .pd_info .pd_title{
+    font-size: 20px;
+    color: #555;
+    padding-top: 10px;
+}
+.pd_frame .pd_box .pd_info .pd_text{
+    font-size: 16px;
+    color: #888;
+}
+.pd_frame .pd_box .pd_info .pd_etc{
+    border-top: 1px solid #ccc;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pd_frame .pd_box .pd_info .pd_etc .pd_date{
+    font-size: 14px;
+}
+.pd_frame .pd_box .pd_info .fav{
+    text-align: right;
+    padding: 0 0 10px;
+    font-size: 14px;
+}
+.pd_frame .pd_box .pd_info .fav span{
+    color: red;
+}

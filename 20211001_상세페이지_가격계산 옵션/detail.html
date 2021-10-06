@@ -75,7 +75,7 @@
                     <p class="result_opt2"></p>
 
                     <ul class="opt_box">
-
+                        <!--
                         <li class="my_item">
                             <div class="det_count">
                                 <div class="det_count_tit">
@@ -95,14 +95,135 @@
                                 <a class="item_del" href="">×</a>
                             </div>
                         </li>
-                        
+                        -->
                     </ul>
+                    
+                    <div class="det_total_price">
+                        <p class="total_price_tit">총 상품금액</p>
+                        <p class="total_price_num"><span>14,000</span>원</p>
+                    </div>
+
+                    <div class="det_button">
+                        <input type="button" value="구매하기">
+                        <input type="button" value="장바구니">
+                    </div>
 
                 </div>
             </div>
         </div>
     </section>
 
+
+
+    <div class="dark"></div>
+    <div class="cart_frame">
+
+        <div class="cart_title">
+            <h3>My Cart <span class="close_btn">×</span></h3>
+        </div>
+
+        <div id="cart_detail">
+
+            <!--
+            <div class="cart_list">
+
+                <div class="top_list">
+                    <div class="img_space">
+                        <img src="" alt="">
+                    </div>
+                    <div class="list_title">
+                        <h4>상품 타이틀 상품 타이틀 상품 타이틀 상품 타이틀</h4>
+                        <p class="list_total"><span>0000</span>원</p>
+                    </div>
+                </div>
+                <ul class="opt_list">
+                    <li>
+                        <div class="opt_title">
+                            <h5>
+                                <span class="opt_title_1">선택 1번 항목</span>
+                                <span class="opt_title_2">선택 2번 항목</span>
+                            </h5>
+                        </div>
+                        <div class="opt_price">
+                            <span>0000</span>원
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+            -->
+
+        </div>
+
+
+        <div class="cart_btn">
+            <ul>
+                <li><button type="button" name="buy">결제하기</button></li>
+                <li><button type="button" name="cancel">취소하기</button></li>
+            </ul>
+        </div>
+
+
+    </div>
+
+
+     <!--존재하는 배열 데이터를 구성(기본가, 수량, 각 총합산)-->
+
+     <section id="calc_box">
+        <ul>
+            <li>
+                <div>
+                    <button class="minusBtn">-</button>
+                    <input type="text" value="1">
+                    <button class="plusBtn" id="p1">+</button>
+                </div>
+                <div class="sum">1000</div>
+            </li>
+            <li>
+                <div>
+                    <button class="minusBtn">-</button>
+                    <input type="text" value="1">
+                    <button class="plusBtn" id="p2">+</button>
+                </div>
+                <div class="sum">2000</div>
+            </li>
+            <li>
+                <div>
+                    <button class="minusBtn">-</button>
+                    <input type="text" value="1">
+                    <button class="plusBtn" id="p3">+</button>
+                </div>
+                <div class="sum">3000</div>
+            </li>
+        </ul>
+
+    </section>
+
+
+    <h3>실습문제. 철수가 엄마 심부름으로 사과(개당 1200원) 3개, 배(개당 1500원) 4개를 구입하려고 했습니다. .plus_btn과 .minus_btn을 누르면서 최종 가격을 각각 적용하시오.</h3>
+    <section id="ex_01">
+        <ul>
+            <li>
+                <p>사과</p>
+                <div class="control_num">
+                    <a class="minus_btn" href="">-</a>
+                    <input type="text" value="1">
+                    <a class="plus_btn" href="">+</a>
+                </div>
+                <h3 class="each_sum"><span>1200</span>원</h3>
+            </li>
+            <li>
+                <p>배</p>
+                <div class="control_num">
+                    <a class="minus_btn" href="">-</a>
+                    <input type="text" value="1">
+                    <a class="plus_btn" href="">+</a>
+                </div>
+                <h3 class="each_sum"><span>1500</span>원</h3>
+            </li>
+        </ul>
+        <h2>심부름 총 합계 : <span>0000</span>원</h2>
+    </section>
 
 </body>
 </html>
