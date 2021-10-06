@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+
+
+.tab1_box{
+    width: 50%;
+    height: 240px;
+    background-size: cover;
+    background-position: 50% 50%;
+    margin: 0 auto 20px;
+}
+
+.tab1_box:nth-child(1){background-image: url(../img/img4.jpg);}
+.tab1_box:nth-child(2){background-image: url(../img/img5.jpg);}
+.tab1_box:nth-child(3){background-image: url(../img/img6.jpg);}

@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+ul{margin: 0; padding: 0; list-style: none;}
+a{text-decoration: none;}
+
+
+.tab_box{
+    width: 900px;
+    margin: 0 auto;
+    background-color: #ddd;
+    padding-bottom: 20px;
+}
+.tab_box ul{display: flex;}
+.tab_box ul li{
+    width: 50%;
+}
+.tab_box ul li a{
+    display: block;
+    text-align: center;
+    background-color: #ffa;
+    line-height: 36px;
+    color: #222;
+}
+.tab_box ul li.active a{
+    background-color: #fa2;
+}

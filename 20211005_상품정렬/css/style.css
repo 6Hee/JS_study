@@ -15,7 +15,12 @@ a{text-decoration: none;}
     width: 1200px;
     margin: 0 auto;
     padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+
 #products .total_pd .sort_button{
     display: flex;
     flex-wrap: wrap;
@@ -31,11 +36,52 @@ a{text-decoration: none;}
     margin: 0 5px;
 }
 
-#products .total_pd .sort_button button.active{
+#products .total_pd .sort_button button.active , #products .total_pd .sort_button button:hover{
     background-color: #555;
     color: #fff;
     outline: none;
 }
+
+
+#products .total_pd .sort_button .sort_sel{
+    padding: 12px 40px 12px 20px;
+    background-color: #fff;
+    border: 1px solid #777;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #777;
+    font-size: 17px;
+    margin: 0 5px;
+    -webkit-appearance: none;
+    background-image: url(../img/arrow-down.png);
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
+    background-size: auto 14px;
+}
+
+
+/*상품개수 view 조정하기*/
+#products .total_pd .ea_num{
+    display: flex;
+    flex-wrap: wrap;
+}
+#products .total_pd .ea_num button{
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    margin: 0 5px;
+    border: 1px solid #777;
+    font-size: 17px;
+    color: #555;
+    cursor: pointer;
+}
+
+#products .total_pd .ea_num button.active{
+    background-color: #555;
+    color: #fff;
+    outline: none;
+}
+
 
 
 
@@ -65,6 +111,7 @@ a{text-decoration: none;}
 }
 .pd_frame .pd_box .pd_photo img{
     width: 100%;
+    height: 100%;
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
@@ -97,3 +144,23 @@ a{text-decoration: none;}
 .pd_frame .pd_box .pd_info .fav span{
     color: red;
 }
+
+
+/*하단 페이저 파트*/
+.pager{
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pager li{
+    font-size: 15px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 10px;
+    border-right: 1px solid #777;
+    color: #555;
+}
+
+.pager li:last-child{border: none;}
+.pager li.active{color: #f00;}

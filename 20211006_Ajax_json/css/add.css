@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+.addHTML_title{
+    background-color: #fa0;
+}
+
+#html_space h2{
+    color: #fff;
+}
+
+.img_part img{
+    height: 200px;
+}
