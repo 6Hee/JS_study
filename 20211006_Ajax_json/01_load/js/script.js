@@ -15,6 +15,9 @@ $(document).ready(function(){
         var $btn_index = $(this).index();
         $(".tab_cont").load("./tab"+$btn_index+".html");
 
+
+        $(".tab_box li").removeClass("active");
+        $(this).addClass("active");
         
         return false;
     });
