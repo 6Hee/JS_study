@@ -1,0 +1,104 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+*{box-sizing:border-box; font-family: 'Poppins', 'Nanum Gothic', sans-serif;}
+html, body{margin:0; padding:0;}
+h1, h2, h3, h4, h5, h6, p{margin:0;}
+ul, ol{margin:0; padding:0; list-style:none;}
+a{text-decoration:none;}
+
+
+
+/*========= header part =========*/
+
+#header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/main_01.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+    position: relative;
+    overflow: hidden;
+}
+#header .movie_space{
+    position: absolute;
+    width: 160%;
+    height: 160%;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+#header .dark_bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    background-image: url(../img/dot_pattern.png);
+}
+#header .dark_bg .main_title{
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+#header .dark_bg .main_title img{
+    display: block;
+    width: 300px;
+}
+#header nav{
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #1f232f;
+}
+#header nav .frame{
+    width: 960px;
+    height: 100%;
+    margin: 0 auto;
+}
+#header nav .frame ul{
+    height: 100%;
+    display: flex;
+}
+#header nav .frame ul li{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#header nav .frame ul li.active:after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    bottom: 0; left: 0;
+    background-color: #fff;
+}
+#header nav .frame ul li a{
+    display: block;
+    color: #aaa;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+#header nav .frame ul li.active a{
+    color: #fff;
+}
+#header nav .frame ul li a:hover{
+    color: #fff;
+}
+
+
+
+/*========= footer part =========*/
+
+#footer{
+    width: 100%;
+    background-color: #191919;
+    text-align: center;
+}
+#footer p{
+    font-size: 15px;
+    color: #aaa;
+    line-height: 60px;
+}
