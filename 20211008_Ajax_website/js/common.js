@@ -88,4 +88,33 @@ $(document).ready(function(){
         return false;
     });
 
+
+    $(".res_btn").click(function(){
+        $("nav").addClass("active");
+        $(".dark_res").addClass("active");
+    });
+
+    $("nav li, .close_btn, .dark_res").click(function(){
+        $("nav").removeClass("active");
+        $(".dark_res").removeClass("active");
+        return false;
+    });
+
+    //메뉴 클릭시 해당하는 위치로 스크롤바 이동을 시킴
+    function resize_move(){
+        var $winWidth = $(window).width();  //클릭했을 때 현 시점에서 가로값을 받아온다.
+        console.log($winWidth);
+
+        if($winWidth < 768){ //모바일 파트 (반응형 메뉴가 나와야 할 파트)
+            $("html, body").animate({scrollTop:$("section#content").offset().top},1000);
+        }else{  //pc 형 메뉴가 존재
+            $("html, body").animate({scrollTop:$("nav").offset().top},1000);
+        }
+    }
+    $("nav li").click(function(){
+        resize_move();
+        return false;
+    }); 
+
+
 });

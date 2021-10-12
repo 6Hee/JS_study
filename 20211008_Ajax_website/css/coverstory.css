@@ -24,3 +24,29 @@
 .coverstory div:nth-child(7){background-image: url(../img/cont_04.jpg);}
 .coverstory div:nth-child(8){width: 50%; background-image: url(../img/cont_12.jpg);}
 .coverstory div:nth-child(9){background-image: url(../img/cont_08.jpg);}
+
+
+@media (max-width:1199px){
+    .coverstory div{width: calc(100% / 3); height: 320px;}
+    .coverstory div:nth-child(1){height: 640px;}
+    .coverstory div:nth-child(3){width: calc(100% / 3);}
+    .coverstory div:nth-child(6){width: 50%;}
+    .coverstory div:nth-child(7){width: 50%;}
+    .coverstory div:nth-child(8){width: 50%;}
+    .coverstory div:nth-child(9){width: 50%;}
+}
+@media (max-width:959px){
+    .coverstory div{width: 50%; height: 280px;}
+    .coverstory div:nth-child(1){height: 560px;}
+    .coverstory div:nth-child(3){width: 50%;}
+}
+@media (max-width:767px){
+    .coverstory{padding: 10px 10px 0;}
+    .coverstory div{width: 100%; height: 240px; margin-bottom: 10px;}
+    .coverstory div:nth-child(1){height: 240px;}
+    .coverstory div:nth-child(3){width: 100%;}
+    .coverstory div:nth-child(6){width: 100%;}
+    .coverstory div:nth-child(7){width: 100%;}
+    .coverstory div:nth-child(8){width: 100%;}
+    .coverstory div:nth-child(9){width: 100%;}
+}
