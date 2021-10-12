@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datepicker - 캘린더</title>
+    <link rel="stylesheet" href="./jquery-ui-1.13.0.custom/jquery-ui.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    
+    <h2>특정날짜 선택</h2>
+    <div id="date_form_01">
+        <label for="date_01">기억에 남는 소중한 날짜</label>
+        <input type="text" id="date_01">
+    </div>
+
+
+    <h2>생년월일(한글버전)</h2>
+    <div id="date_form_02">
+        <label for="date_02">생년월일(한글버전)</label>
+        <input type="text" id="date_02">
+    </div>
+
+
+    <h2>기간 선택(한글버전) - 무작위 기간 선택</h2>
+    <label for="">기간 선택(범위 없음)</label>
+    <input type="text" id="date_03_01">
+    &nbsp;▶&nbsp;
+    <input type="text" id="date_03_02">
+
+
+
+    <h2>오늘 날짜를 기준으로 특정 날짜를 선택 - 미래의 특정 날짜에 대한 기간을 정함</h2>
+    <div id="date_form_04">
+        <label for="">기간 선택(범위 있음)</label>
+        <input type="text" id="date_04_01">
+        &nbsp;▶&nbsp;
+        <input type="text" id="date_04_02">
+    </div>
+
+    <h2></h2>
+
+    <h2>5. 특정 날짜를 선택하여 시작일, 그 이후부터 종료일을 선택하도록 구성</h2>
+    <p>오늘날짜 : <span id="today">0000</span></p>
+    <form class="calendar" action="">
+        <label for="fromDate">시작일</label>
+        <input type="text" name="fromD" id="fromDate">
+        &nbsp;▶&nbsp;
+        <label for="toDate">종료일</label>
+        <input type="text" name="toD" id="toDate">
+    </form>
+
+
+    <h2>6. 선택한 날짜의 value 값을 가져오기</h2>
+    <div id="date_form_06">
+        <div class="datepicker_01">달력가져오기</div>
+        <div class="result_date">
+            <p>선택한 날짜</p>
+            <input type="text" name="targetDate" value="yy-mm-dd">
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <script src="./jquery-ui-1.13.0.custom/jquery-ui.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

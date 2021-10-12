@@ -9,7 +9,7 @@ a{text-decoration: none;}
 #case_01{
     width: 100%;
     height: 50vh;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 #case_01 .slick_group{}
 #case_01 .slick_group .slick_slide{
@@ -23,3 +23,115 @@ a{text-decoration: none;}
 #case_01 .slick_group .img_02{background-image: url(../img/img-02.jpg);}
 #case_01 .slick_group .img_03{background-image: url(../img/img-03.jpg);}
 #case_01 .slick_group .img_04{background-image: url(../img/img-04.jpg);}
+/*slick js plugIn 을 사용시 스타일 파트에서 주의사항 : 슬라이드 이미지가 들어갈 공간은 반드시 높이값이 존재해야 함*/
+
+
+/* slick js customizing part */
+#case_01 .slick-prev, #case_01 .slick-next{
+    z-index: 100;
+    width: 40px;
+    height: 40px;
+    transition: left 0.5s, right 0.5s, opacity 0.5s;
+}
+#case_01 .slick-prev::before, #case_01 .slick-next::before{
+    font-size: 40px;
+}
+
+#case_01 .slick-prev{opacity: 0;}
+#case_01 .slick-next{opacity: 0;}
+
+#case_01:hover .slick-prev{left: 25px; opacity: 1;}
+#case_01:hover .slick-next{right: 25px; opacity: 1;}
+
+#case_01 .slick-dots{bottom: 25px;}
+#case_01 .slick-dots li button::before{
+    font-size: 12px;
+    opacity: 1;
+    color: #ddd;
+}
+#case_01 .slick-dots li.slick-active button::before{
+    color: aqua;
+}
+
+
+
+
+
+
+#case_02{}
+#case_02 .slick_frame{
+    width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+}
+#case_02 .slick_frame .half_section{
+    width: 50%;
+    height: 620px;
+}
+#case_02 .slick_frame .half_section .slick_02{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 0 0 0 40px;
+}
+#case_02 .slick_frame .half_section .slick_02 .slide{
+    width: 100%;
+    padding: 0 10px;
+    position: relative;
+    z-index: 1;
+}
+#case_02 .slick_frame .half_section .slick_02 .slide a{
+    display: block;
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+#case_02 .slick_frame .half_section .slick_02 .slick_img_01 a{
+    background-image: url(../img/slick-img-01.jpg);
+}
+#case_02 .slick_frame .half_section .slick_02 .slick_img_02 a{
+    background-image: url(../img/slick-img-02.jpg);
+}
+#case_02 .slick_frame .half_section .slick_02 .slick_img_03 a{
+    background-image: url(../img/slick-img-03.jpg);
+}
+#case_02 .slick_frame .half_section .slick_02 .slick_img_04 a{
+    background-image: url(../img/slick-img-04.jpg);
+}
+#case_02 .slick_frame .half_section .slick_02 .slick_img_05 a{
+    background-image: url(../img/slick-img-05.jpg);
+}
+#case_02 .slick_frame .half_section .slick_02 .slick_img_06 a{
+    background-image: url(../img/slick-img-06.jpg);
+}
+#case_02 .slick_frame .half_section .slick_02 .slick_img_07 a{
+    background-image: url(../img/slick-img-07.jpg);
+}
+
+
+
+#case_02 .slick_frame .half_section .slick_02 .slide a .black_bg{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #f00;
+    position: absolute;
+    top: 0; left: 0;
+    opacity: 0;
+    border-radius: 20px 0;
+}
+
+#case_02 .slick_frame .half_section .slick_02 .slick-center .slide a .black_bg{
+    opacity: 1;
+}
+#case_02 .slick-dots{
+    position: absolute;
+    top: 50%; left: 4px;
+    bottom: auto;
+    transform: translateY(-50%);
+}
+#case_02 .slick-dots li{display: block;}
