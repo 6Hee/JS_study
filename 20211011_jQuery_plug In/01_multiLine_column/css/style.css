@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+#multi_line{
+    width: 720px;
+}
+
+#multi_line .bx{
+    width: 200px;
+}
