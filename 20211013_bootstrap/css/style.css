@@ -1,0 +1,29 @@
+@charset "utf-8";
+*{box-sizing: border-box;}
+html, body{margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6, p{margin: 0;}
+ul, ol{margin: 0; padding: 0; list-style: none;}
+a{text-decoration: none;}
+
+
+
+
+.out_box1{
+    height: 200px;
+    background-color: #faa;
+}
+.out_box2{
+    height: 200px;
+    background-color: #aff;
+}
+.out_box3{
+    padding: 20px 0;
+    background-color: #ccc;
+}
+.out_box3 .inBox{
+    padding-bottom: 10px;
+}
+.out_box3 .inBox div{
+    height: 160px;
+    background-color: #08f;
+}
