@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bootstrap</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./slick/slick.css">
+    <link rel="stylesheet" href="./slick/slick-theme.css">
     <link rel="stylesheet" href="./css/style.css">
+
 </head>
 <body>
     
@@ -37,15 +40,357 @@
     -->
 
 
+    <h4>grid의 활용1 - 입력 상자(회원가입)의 구조화</h4>
+
+    <section id="register_box">
+
+        <form action="">
+            <fieldset>
+
+                <legend>회원가입 창</legend>
+                <div class="container"> 
+
+                    <div class="row inputLine">
+                        <label for="user_id" class="col-md-3 col-lg-3">아이디</label>
+
+                        <div class="col-md-9 col-lg-6"> <!--768px 이상의 구간에서는 75%를 차지 + 992px 이상의 구간에서는 50% 차지-->
+                            <input type="text" name="" id="user_id">
+                        </div>  
+                        <div class="col-md-3 col-lg-3 sameIdChk">
+                            <button>중복확인</button>
+                        </div>
+                    </div>
+
+
+                    <div class="row inputLine">
+                        <label class="col-md-3" for="user_pw">패스워드</label>
+                        <div class="col-md-6 col-lg-6">
+                            <input type="text" id="user_pw">
+                        </div>
+                    </div>
+                    <div class="row inputLine">
+                        <label class="col-md-3" for="user_pw_confirm">패스워드 확인</label>
+                        <div class="col-md-6 col-lg-6">
+                            <input type="text" id="user_pw_confirm" required>
+                        </div>
+                    </div>
+                    <div class="row inputLine">
+                        <label class="col-md-3" for="user_email">이메일</label>
+                        <div class="col-md-6 col-lg-6">
+                            <input type="text" id="user_email" required>
+                        </div>
+                    </div>
+
+                    <div class="row inputLine">
+                        <div class="col-7 col-md-9"></div>
+                        <div class="col-5 col-md-3 submitBtn">
+                            <button type="submit">회원가입</button>
+                        </div>
+                    </div>
+                    
+
+                </div>
+
+
+            </fieldset>
+        </form>
+
+    </section>
+
+    <!--
+        .col-숫자 : 모든 구간에서 적용되는 가로 사이즈(%)
+        .col-sm-숫자 : 576px 이상의 구간에서 적용되는 가로 사이즈(%)
+        .col-md-숫자 : 768px 이상의 구간에서 적용되는 가로 사이즈(%)
+        .col-lg-숫자 : 992px 이상의 구간에서 적용되는 가로 사이즈(%)
+        .col-xl-숫자 : 1200px 이상의 구간에서 적용되는 가로 사이즈(%)
+        .col-xxl-숫자 : 1400px 이상의 구간에서 적용되는 가로 사이즈(%)
+
+        <<bootstrap 4 버전에 대해서 선언된 CSS>>
+        [class*="container"]{padding-left:15px; padding-right:15px}
+        [class*="row"]{margin-left:-15px; margin-right:-15px}
+        [class*="col"]{padding-left:15px; padding-right:15px;}
+    -->
+
+    <h4>1. 모든 구간에서 동일한 비율로 적용</h4>
+    <div class="container outBox4">
+        <div class="row">
+            <div class="col midbx"><div class="bx">1</div></div>
+            <div class="col midbx"><div class="bx">2</div></div>
+            <div class="col midbx"><div class="bx">3</div></div>
+        </div>
+    </div>
+
+    <hr>
+
+    <h4>2. 모든 구간에서 동일한 비율로 적용</h4>
+    <div class="container outBox4">
+        <div class="row">
+            <div class="col-2 midbx"><div class="bx">1</div></div>
+            <div class="col-4 midbx"><div class="bx">2</div></div>
+            <div class="col-6 midbx"><div class="bx">3</div></div>
+        </div>
+    </div>
+
+    <hr>
+
+    <h4>3. 576px 이상의 구간에서 동일한 비율로 적용. 576px미만의 구간에서는 100%로 펼쳐진다.</h4>
+    <div class="container outBox4">
+        <div class="row">
+            <div class="col-sm-2 midbx"><div class="bx">1</div></div>
+            <div class="col-sm-4 midbx"><div class="bx">2</div></div>
+            <div class="col-sm-6 midbx"><div class="bx">3</div></div>
+        </div>
+    </div>
+
+    <hr>
+
+    <h4>4. 768px 이상의 구간에서 동일한 비율로 적용. 768px미만의 구간에서는 100%로 펼쳐진다.</h4>
+    <div class="container outBox4">
+        <div class="row">
+            <div class="col-md-2 midbx"><div class="bx">1</div></div>
+            <div class="col-md-4 midbx"><div class="bx">2</div></div>
+            <div class="col-md-6 midbx"><div class="bx">3</div></div>
+        </div>
+    </div>
+
+    <hr>
+
+    <h4>5. 992px 이상의 구간에서 동일한 비율로 적용. 992px미만의 구간에서는 100%로 펼쳐진다.</h4>
+    <div class="container outBox4">
+        <div class="row">
+            <div class="col-lg-2 midbx"><div class="bx">1</div></div>
+            <div class="col-lg-4 midbx"><div class="bx">2</div></div>
+            <div class="col-lg-6 midbx"><div class="bx">3</div></div>
+        </div>
+    </div>
+
+    <h4>6. 1200px 이상의 구간에서 비율로 적용. 1200px 미만의 구간에서는 100%로 펼쳐진다.</h4>
+    <div class="container outBox9">
+        <div class="row">
+            <div class="col-xl-2 midbx"><div class="bx">1</div></div>
+            <div class="col-xl-4 midbx"><div class="bx">2</div></div>
+            <div class="col-xl-6 midbx"><div class="bx">3</div></div>
+        </div>
+    </div>
 
 
 
+    <hr>
+    <hr>
 
 
+    <h3>bootstrap</h3>
+    <div class="container">
+        <table class="table text-center table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>구분</th>
+                    <th>이름</th>
+                    <th>지역</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>01</td>
+                    <td>홍길동</td>
+                    <td>서울</td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>홍길영</td>
+                    <td>인천</td>
+                </tr>
+                <tr>
+                    <td>03</td>
+                    <td>홍영만</td>
+                    <td>경기</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 
+    <h4>일정 크기 이하의 디바이스로 접근했다면 내부 가로스크롤 바를 생성</h4>
+    <div class="table_box table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>아이디</th>
+                    <th>이름</th>
+                    <th>나이</th>
+                    <th>주소1</th>
+                    <th>주소2</th>
+                    <th>구매금액</th>
+                    <th>할인금액</th>
+                    <th>일 구매 금액</th>
+                    <th>월 구매 금액</th>
+                    <th>연 구매 금액</th>
+                    <th>고객 등급</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>HGD</td>
+                    <td>홍길동</td>
+                    <td>20</td>
+                    <td>인천광역시 동구</td>
+                    <td>1234-23 번지</td>
+                    <td>50,000</td>
+                    <td>45,000</td>
+                    <td>50,000</td>
+                    <td>100,000</td>
+                    <td>2,000,000</td>
+                    <td>Gold</td>
+                </tr>
+                <tr>
+                    <td>HYM</td>
+                    <td>홍영만</td>
+                    <td>20</td>
+                    <td>인천광역시 동구</td>
+                    <td>1234-23 번지</td>
+                    <td>50,000</td>
+                    <td>45,000</td>
+                    <td>50,000</td>
+                    <td>100,000</td>
+                    <td>2,000,000</td>
+                    <td>Gold</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
 
 
+    <h3>버튼의 그룹화</h3>
+    <div id="button_group" class="container">
+        <div class="btn-group">
+            <button class="btn btn-primary">버튼1</button>
+            <button class="btn btn-success">버튼1</button>
+            <button class="btn btn-warning">버튼1</button>
+            <button class="btn btn-danger">버튼1</button>
+            <button class="btn btn-dark">버튼1</button>
+
+            <div class="btn-group dropdown">
+                <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">주 메뉴</button>
+                <!--data-bs-toggle : 보이는 것은 감춘다. 감춰진 것은 보인다.-->
+                <!--id="dropdownMenuButton" 와 aria-labelledby="dropdownMenuButton" 서로 동일한 값으로 맞춘다.-->
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a href="" class="dropdown-item">서브메뉴1</a>
+                    <a href="" class="dropdown-item">서브메뉴2</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <h3>네비게이션 구성</h3>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar bg-dark navbar-expand-md navbar-dark df_space">
+
+                <!--.navbar : 네비게이션 메뉴 구성에 대한 선언-->
+                <!--.navbar-expand-md : 반응형 메뉴로 진입하는 시점을 통제해주는 클래스명(.navbar-expand-md일 경우, 768px을 기준으로 메뉴를 펼쳐보이겠다는 선언 / .navbar-expand-sm일 경우, 576px을 기준으로 메뉴를 펼치겠다는 선언)-->
+                <a href="#" class="navbar-brand">Brand</a>
+
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#collapseNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!--data-bs-toggle = "collapse" : 지정된 상단의 반응형 미만으로 적용되었을 때, 기존 메뉴를 숨김처리 하겠다는 의미-->
+                <!---->
+                <!---->
+                <!---->
+
+
+                <div class="collapse navbar-collapse" id="collapseNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="" class="nav-link">알라딘</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">라푼젤</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">미녀와 야수</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">소피아</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </nav>
+        </div>
+    </div>
+
+    <!--클래스명에서 사용불가(customize용) : panel, card, btn, table, ... 부트스트랩에서 사용중인 예약어-->
+
+    <h3>carousel(회전목마) 슬라이드 이미지 구성</h3>
+    <div id="slider" class="carousel slide" data-bs-ride="carousel">
+        <!--슬라이드 네비게이션 구성-->
+        <ul class="carousel-indicators">
+            <li data-bs-target="#slider" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#slider" data-bs-slide-to="1"></li>
+            <li data-bs-target="#slider" data-bs-slide-to="2"></li>
+        </ul>
+
+        <!--carousel 슬라이드 본 이미지-->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./img/slide_01.jpg" alt="slide1">
+                <div class="carousel-caption">
+                    <h3 class="text-white">환상의 세계1</h3>
+                    <p class="text-white">Fantastic World!</p>
+                    <button type="button" class="btn btn-warning">Detail View</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./img/slide_02.jpg" alt="slide2">
+                <div class="carousel-caption">
+                    <h3 class="text-white">환상의 세계1</h3>
+                    <p class="text-white">Fantastic World!</p>
+                    <button type="button" class="btn btn-warning">Detail View</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./img/slide_03.jpg" alt="slide3">
+                <div class="carousel-caption">
+                    <h3 class="text-white">환상의 세계1</h3>
+                    <p class="text-white">Fantastic World!</p>
+                    <button type="button" class="btn btn-warning">Detail View</button>
+                </div>
+            </div>
+        </div>
+
+        <!--슬라이드를 넘길 수 있는 화살표 구성-->
+        <a class="carousel-control-prev" href="#slider" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#slider" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+
+    </div>
+
+
+    <h3>팝업창 구현하기</h3>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#popup">팝업창 열기</button>
+
+    <div class="modal fade" id="popup">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">공지사항</h3>
+                    <button type="button" class="btn btn-light close" data-bs-dismiss="modal">×</button>
+                </div>
+                <div class="modal-body">
+                    <p>별빛 축제 이벤트 개최</p>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
 
 
 
@@ -53,6 +398,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="./slick/slick.js"></script>
     <script src="./js/script.js"></script>
+
+
 </body>
 </html>
