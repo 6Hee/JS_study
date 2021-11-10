@@ -1,0 +1,54 @@
+<script>
+    //symbol은 숫자형 데이터, 문자형 데이터, 논리형 데이터 처럼 원시형 데이터 중 하나. ES6에서 추가됨
+
+    const me = Symbol("전우치");
+    console.log(me); //Symbol(전우치)
+    console.log(typeof(me)); //symbol
+
+    const clone = Symbol("전우치");
+    console.log(clone);
+
+    console.log(me == clone); //false
+    console.log(me === clone); //false
+    //심볼의 고유성을 간직 => 독립적인 데이터 공간을 차지
+
+
+    //회원 중 동명이인이 존재한다면
+    const member1 = {
+        "김동현" : "1번",
+        "김상우" : "2번",
+        "김상우" : "3번",
+        "김성욱" : "4번",
+    }
+
+    for (person1 in member1){
+        console.log(person1);
+        //김동현
+        //김상우 (회원 중 동명이인 이었던 한명은 없음)
+        //김성욱
+    }
+
+    //동일한 key 값을 갖고 있는 것을 피하기 위해서는 심볼을 적용. 심볼은 나열방식이 아니기 때문에 일반적인 객체에서 반복문을 사용하는 도구들은 사용 불가
+
+    const member2 = {
+        [Symbol("김동현")] : "1번",
+        [Symbol("김상우")] : "2번",
+        [Symbol("김상우")] : "3번",
+        [Symbol("김성욱")] : "4번",
+    }
+    for (person2 in member2){
+        console.log(person2);
+        //반복 적용 안됨
+    }
+
+    const member2_name = Object.getOwnPropertySymbols(member2);
+    console.log(member2_name); //(4) [Symbol(김동현), Symbol(김상우), Symbol(김상우), Symbol(김성욱)]
+
+
+    const [mem1, mem2, mem3, mem4] = member2_name;
+    console.log(mem1.toString().substr(7, 3)); //김동현
+    console.log(mem2.toString().substr(7, 3)); //김상우
+    console.log(mem3.toString().substr(7, 3)); //김상우
+    console.log(mem4.toString().substr(7, 3)); //김성욱
+
+</script>
