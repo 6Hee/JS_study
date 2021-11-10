@@ -27,3 +27,132 @@ a{text-decoration: none;}
     height: 160px;
     background-color: #08f;
 }
+
+
+
+#register_box{
+    width: 100%;
+    margin: 0 auto;
+    background: #eee;
+    padding: 20px;
+}
+
+#register_box form{}
+
+#register_box form fieldset{
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+#register_box form fieldset legend{}
+
+#register_box form fieldset > div{}
+
+#register_box form fieldset > div > .inputLine{
+    margin: 0;
+    padding-bottom: 20px;
+}
+#register_box form > div > .inputLine label{
+    line-height: 40px;
+    font-size: 18px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+#register_box form fieldset > div > .inputLine input{
+    height: 40px;
+    width: 100%;
+    padding: 0 10px;
+}
+
+#register_box form fieldset > div > .inputLine button{
+    height: 40px;
+    width: 100%;
+    border: none;
+    background-color: #08f;
+    color: #fff;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+
+@media (min-width : 1000px){
+    #register_box{
+        width: 1000px;
+    }
+}
+
+
+.outBox4{
+    padding-top: 20px;
+    background: #aff;
+}
+.outBox4 .bx{
+    height: 160px;
+    background: #faa;
+    margin-bottom: 20px;
+}
+.outBox4 .midbx:nth-child(2n) .bx{
+    background: #ffa;
+}
+
+
+.outBox5{padding-top: 20px; background: #aff;}
+
+.outBox5 .midbx .bx{height: 160px; background: #faa; margin-bottom: 20px;}
+.outBox5 .midbx:nth-child(2n) .bx{background: #ffa;}
+
+.outBox6{padding-top: 20px; background: #aff;}
+
+.outBox6 .midbx .bx{height: 160px; background: #faa; margin-bottom: 20px;}
+.outBox6 .midbx:nth-child(2n) .bx{background: #ffa;}
+
+
+.outBox7{padding-top: 20px; background: #aff;}
+
+.outBox7 .midbx .bx{height: 160px; background: #faa; margin-bottom: 20px;}
+.outBox7 .midbx:nth-child(2n) .bx{background: #ffa;}
+
+
+.outBox8{padding-top: 20px; background: #aff;}
+
+.outBox8 .midbx .bx{height: 160px; background: #faa; margin-bottom: 20px;}
+.outBox8 .midbx:nth-child(2n) .bx{background: #ffa;}
+
+.outBox9{padding-top: 20px; background: #aff;}
+.outBox9 .midbx .bx{height: 160px; background: #faa; margin-bottom: 20px;}
+.outBox9 .midbx:nth-child(2n) .bx{background: #ffa;}
+
+
+.table_box table{overflow: hidden;}
+
+.table_box th:nth-child(1){min-width:180px;}
+.table_box th:nth-child(2){min-width:180px;}
+.table_box th:nth-child(3){min-width:180px;}
+.table_box th:nth-child(4){min-width:180px;}
+.table_box th:nth-child(5){min-width:180px;}
+.table_box th:nth-child(6){min-width:180px;}
+.table_box th:nth-child(7){min-width:180px;}
+.table_box th:nth-child(8){min-width:180px;}
+.table_box th:nth-child(9){min-width:180px;}
+.table_box th:nth-child(10){min-width:180px;}
+.table_box th:nth-child(11){min-width:180px;}
+
+
+#button_group{
+    height: 300px;
+}
+
+
+.df_space{
+    display: flex;
+    justify-content: space-between;
+}
+.df_space #collapseNav{
+    flex-grow: unset;
+}
+
+.carousel-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

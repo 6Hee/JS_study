@@ -1,0 +1,147 @@
+<script>
+    //전개연산자(spreadOperator) : 나열형 자료(배열(Array)과 객체(Object))를 추출하거나 연결시 사용
+    //사용방법 : 변수명 앞에 마침표 세개를 연속으로 작성한다. (...변수명)
+    //구분자에 대한 제한 : 배열 - [] / 객체 - {} / 함수 - ()
+
+    //***********기존 자바스크립트(ES5 이하) <배열>에서 전개연산자처럼 사용***********//
+    var array1 = ["one", "two"];
+    var array2 = ["three", "four"];
+
+    //두 개의 배열 데이터 합치기 - 1
+    var combine1 = [array1[0], array1[1], array2[0], array2[1]];
+    console.log(combine1);
+
+    //두 개의 배열 데이터 합치기 - 2
+    var combine2 = array1.concat(array2);
+    console.log(combine2);
+
+    //두 개의 배열 데이터 합치기 - 3
+    var combine3 = [].concat(array1, array2);
+    console.log(combine3);
+
+
+    var array1 = ["one", "two"];
+    var array2 = ["three", "four"];
+
+    //var combine3_1 = Array(array1, array2);
+    var combine3_1 = [[], []];  //[0, 1]
+    //실습 : push() 메서드를 활용하여 아래의 출력형태와 같게 만드시오.
+
+    combine3_1[0].push(array1[0]);
+    combine3_1[0].push(array1[1]);
+    combine3_1[1].push(array2[0]);
+    combine3_1[1].push(array2[1]);
+
+    console.log(combine3_1);  //[["one", "two"], ["three", "four"]]
+
+
+    var first = array1[0];
+    console.log(first);  //one
+    var second = array1[1];
+    console.log(second);  //two
+    var third = array1[2] || "empty";  //"||"(or연산자)를 조합하면 배열의 요소가 존재하지 않을 때 기본값으로 "empty"라는 특정 지정값으로 적용가능
+    console.log(third);  //empty
+
+
+    //***********자바스크립트(ES6 이후) <배열>에서 전개연산자 사용***********//
+    const array3 = ["one", "two"];
+    const array4 = ["three", "four"];
+
+    const combine4 = [...array3, ...array4];
+    console.log(combine4);  //['one', 'two', 'three', 'four']
+
+    const combine5 = [[...array3], [...array4]];  
+    console.log(combine5);  //[["one", "two"], ["three", "four"]]
+
+    const [first_arr, second_arr = "empty", third_arr = "empty", fourth_Arr] = array3;  //["one", "two"]
+    console.log(first_arr);  //one
+    console.log(second_arr);  //two
+    console.log(third_arr);  //empty : 데이터의 값이 존재하지 않을 경우 기본값으로 설정한 "empty"가 도출
+    console.log(fourth_Arr);  //undefined
+
+    //예시, 교육을 받고자 검색을 진행했을 때, 상위 그룹을 선택1을 건너뛰고(value값이 존재하지 않은 상태), 하위그룹 선택2만 지정한 경우, [undefined, "문학"]로 저장되면 filter라는 함수를 적용했을 때, 배열데이터의 순환과정상 undefined라는 형태가 검색의 결과 도출간 방해요인으로 적용될 수 있음 => 문자형 데이터인 "empty"라는 단어로 변경하여 조건식을 부여할 수 있음. (undefined : 데이터다 없어서 나오는 결과값, 데이터가 깨져서 나오는 결과값일 수도 있기 때문 => 구분의 명확성이 떨어질 수밖에 없음)
+
+
+    ////////////////////////////////////////////////////////////////////////////////
+
+    //***********기존 자바스크립트(ES5 이하) <객체>에서 전개연산자처럼 사용***********//
+
+    var objectOne = {one:1, two:2, etc:0}
+    var objectTwo = {three:3, four:4, etc:7}
+    var combine6 = {
+        one : objectOne.one,
+        two : objectOne.two,
+        three: objectTwo.three,
+        four : objectTwo.four
+    }
+    console.log(combine6);
+
+    //객체는 {key1:value1, key2:value2, ...} 구성
+    //Object.assign(target, source1, source2, ..., sourceN) 메서드 : 객체의 병합(병합간에 동일한 명칭(key)이 존재할 때 가장 나중에 나오는 값을 덮어쓴다.)
+
+    var combine7 = Object.assign({}, objectOne);
+    console.log(combine7);  //{one: 1, two: 2, etc: 0}
+    var combine7 = Object.assign({}, objectOne, objectTwo);
+    console.log(combine7);  //{one: 1, two: 2, etc: 7, three: 3, four: 4}
+    //동일한 key인 etc라는 명칭이 objectOne으로부터 적용된 후 생성이 되어있기 때문에 기존의 명칭인 etc에 새로운 값으로 변경(덮어쓰기)
+
+
+    //***********자바스크립트(ES6 이후) <객체>에서 전개연산자 사용***********//
+
+    const object1 = {one:1, two:2, etc:0}
+    const object2 = {three:3, four:4, etc:7}
+
+    const combine8 = {
+        ...object1,
+        ...object2
+    }
+    console.log(combine8);  //{one: 1, two: 2, etc: 7, three: 3, four: 4}
+
+    const combine9 = {
+        ...object2,
+        ...object1
+    }
+    console.log(combine9);  //{three: 3, four: 4, etc: 0, one: 1, two: 2}
+
+
+    //실습문제 - 반드시 전개연산자를 사용할 것!!
+    const obj1 = {f1 : "사과", f2 : "오렌지", f0 : "바나나"};
+    const obj2 = {f3 : "포도", f4 : "수박", f0 : "배"};
+    //두 개의 객체를 전개연산자를 통해 합친 후, "배"라는 데이터만 추출(전개연산자 사용할 것~!!  const {power, ...marvel3} = marvel2; 형식을 사용 )
+
+    const combine10 = {
+        ...obj1,
+        ...obj2
+    }
+
+    console.log(combine10);  //{f1: '사과', f2: '오렌지', f0: '배', f3: '포도', f4: '수박'}
+    const {f0, ...reminder} = combine10;
+    console.log(f0);  //배
+    console.log(reminder);  //{f1: '사과', f2: '오렌지', f3: '포도', f4: '수박'}
+
+
+
+    //const {key1, key2} = 객체를 담은 변수;  //객체 디스트럭처링(destructuring)
+    //const [a1, b1] = 배열을 담은 변수;  //배열 디스트럭처링
+
+
+</script>
+
+    <select name="subject1" id="">
+        <option>==과목선택==</option>
+        <option value="">국어</option>
+        <option value="">수학</option>
+        <option value="">영어</option>
+    </select>
+
+    <select name="subject2" id="">
+        <option>==세부과목선택==</option>
+        <option value="">문학</option>
+        <option value="">시</option>
+        <option value="">통계</option>
+        <option value="">일반수학</option>
+        <option value="">미적분</option>
+        <option value="">문법</option>
+    </select>
+
+    <button type="submit">검색</button>

@@ -1,0 +1,244 @@
+<script>
+    //ES6에서 함수 도입 "화살표 함수(Arrow Function)" : =>
+    //비교연산자 : <=, >=
+
+
+    //**기존함수
+    function add1(a, b){
+        return a + b;
+    }
+    console.log(add1(7 , 8));
+
+
+
+    var add1_1 = function(x, y){
+        return x % y;
+    }
+    console.log(add1_1(15, 3, 2));
+    console.log(add1_1);
+    var add1_1 = 50;
+    console.log(add1_1);
+
+
+    //const 변수 선언
+    const add2 = function(c, d){
+        return c + d;
+    }
+    console.log(add2(10, 20));
+
+    //화살표 함수 적용. function 제거 / {} 대신 '=>'를 작성 / return문만 존재할 때 return문을 제거할 수 있음
+    const add3 = (e, f) => e + f;
+    console.log(add3(14, 7));
+
+
+    //매개변수가 하나만 존재할 때 - 방법1
+    const add4 = (g) => g + 9;
+    console.log(add4(6, 32));  //15
+    //함수 구문에 던져진 값(6, 32)은 두 개 이지만 매개변수 쪽에서 받을 수 있는 변수는 하나이기 때문에 첫번째 던져진 6이라는 값을 g라는 매개변수에만 저장할 수 있음
+
+
+    //매개변수가 하나만 존재할 때 - 방법2
+    const add5 = h => h + 9;  //매개변수가 복수가 아닌 경우, 매개변수를 감싸고 있는 소괄호()를 생략 가능
+    console.log(add5(4, 6));  //13
+
+
+
+    //함수 구문이 복잡한 경우 중괄호 {}를 생략하면 안된다.
+    const calc1 = function(a, b, c){
+        console.log(a);
+        console.log(b);
+        console.log(c);
+
+        let sum = (a + b) * c; // (12+14)*2 = 52
+        return `최종 결과값 : ${sum}`;
+    }
+    console.log(calc1(12, 14, 2))
+
+
+
+
+    //Hoisting : 함수 호출의 위치에 의해서 함수를 호출할 수 있는가에 대한 구성 방법
+    //함수구문 (function()~~)과 함수 호출문의 위치에 의한 조정
+    //Hoisting의 의미 : "소형의 감아올리는 장치(Lifting)" -> 함수 구문이 아직 문서상에서 로딩되지 않았음에도 불구하고 함수 호출문이 함수구문보다 먼저 로딩되는 구조라고 하더라도 함수문의 실행이 진행되는 상태
+    func1(); //함수구문 호출 //func1의 호출에 의한 함수구문 실행(호이스팅이 적용된 상태)
+    //함수 구문을 호출하는 시점에서 아직 함수구문은 아직 로딩이 안된 시점
+
+
+    function func1(){
+        console.log("fnc의 호출에 의한 함수구문 실행");
+    }
+
+
+    //func2(); //func2 is not a function
+    //익명함수에서는 호이스팅을 막는 역할을 담당
+    var func2 = function(){
+        console.log("func2의 호출에 의한 함수구문 실행");
+    }
+    func2();  //func2의 호출에 의한 함수구문 실행
+
+    //자바스크립트의 기반된 언어들은 get방식(어떤 데이터를 가져와라)은 문서가 작성된 순서대로만 로딩을 하게 되어있음
+
+    
+    //func3();  //Uncaught ReferenceError : Cannot access 'func3' before initialization
+    const func3 = function(){
+        console.log("fnc3의 호출에 의한 함수구문 실행");
+    }
+    func3();  //func3의 호출에 의한 함수구문 실행
+
+    //=> Hoisting을 막을 수 있는 방법 : get 방식으로 적용 가능한 익명함수로 함수구문을 선언한다.
+
+    //*** 실습문제 ***//
+    //세 수의 합계를 계산하는 방식으로 함수를 구성하시오. 함수 호출문을 통해서 1,2,3을 함수구문에 전달 <화살표 함수>를 이용하여 "최종합계 : 6"을 콘솔 창에 작성하도록 구성하시오. (매개변수와 return문을 통해서 값을 가져온다. 반드시 변수로 선언할 것~! + const 선언)
+    
+    const ex1 = (i, j, k) => i + j + k;
+    console.log(`최종합계 : ${ex1(1, 2, 3)}`);
+
+
+    const ex2 = (i, j, k) => {
+        let sum = i + j + k;  //함수구문 내부의 실행문에 let으로 지역변수를 선언한 이유 : 복잡한 구조 내부에서 해당하는 함수에 재할당에 대한 자유성을 보장하기 위해서
+        sum = sum * 2;
+        return `최종합계의 두배수 : ${sum}`;
+    }
+    console.log(ex2(1, 2, 3));
+    console.log(ex2(2, 4, 6));
+
+
+
+
+</script>
+
+
+<!-- #1. "스누피" 라는 문구를 카카오로 변경 -->
+<!-- #2. "스누피"라는 문구를 "스머프"로 변경 + 함수 내부에서 리턴받아서 콘솔창에 작성 (콘솔창 결과물 : 스머프 만세) -->
+<!-- 함수 호출간 던져진 값에 의해 매개변수로 받아서 구성할 것~! -->
+
+<h1 id="ch_txt">스누피</h1>
+
+<script>
+    
+    const changeText = a => {
+        //document.getElementById("ch_txt").innerText = a;
+        //document.querySelector("#ch_txt").innerHTML = a;
+        document.querySelector("#ch_txt").textContent = a;
+        console.log(a);
+        return `${a} 만세`;
+    } 
+    //changeText("카카오");
+    console.log(changeText("스머프"));
+
+</script>
+
+
+<h3 id="arrowFunc_this">화살표 함수와 this 키워드</h3>
+<div class="box open">
+    나는 박스 공간입니다.
+</div>
+<style>
+    .open{
+        width: 200px; 
+        height: 200px; 
+        border:1px solid #aaf; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        cursor: pointer;
+    }
+    .opening{background-color: #ffb;}
+</style>
+
+<script>
+    const $box = document.querySelector(".box");
+
+    /*
+    $box.addEventListener("click", function(){
+        console.log(this);  //<div class="box open">나는 박스공간입니다.</div>
+        this.classList.add("opening");
+    });
+    */
+
+
+    $box.addEventListener("click", () => {
+        console.log(this);  //Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+        this.classList.add("opening");
+    });
+
+
+    //화살표 함수가 부모 스코프 {}에서 this 값을 상속한다는 것을 인지한다면, 에러가 발생하는 부분을 막기 위해서는 일반함수로 작성을 해야 한다. 추후에 업그레이드 예상되어 기존 일반 함수문처럼 적용이 될 것으로 예상(ECMA Script 2021 까지도 업그레이드 안된 상태)
+
+
+</script>
+
+<!-- 객체에서도 메서드 방법에 따라서 접근되는 this 키워드의 대상은 달라질 수 있음 -->
+
+
+<script>
+    const person1 = {
+        age : 10,  //일반속성(일반적인 객체의 정적 정보)
+        grow : function(){ //메서드(객체가 실행하면서 변동이 가능한 동적 정보)
+            console.log(this);  //{age: 10, grow: f}
+            this.age++;
+            console.log(this.age);
+        }
+    }
+    console.log(person1.age);  //객체의 일반속성을 가져온다.
+    person1.grow();  //객체 내부의 함수문을 갖고 있는 key 값을 호출하고 함수문이 작동되도록 실행명령
+
+    const person2 = {
+        age : 10,
+        grow : () => {
+            this.age++;
+            console.log(this);
+        }
+    }
+    console.log(person2.age);
+    person2.grow();
+
+</script>
+
+
+
+
+<!-- argument 객체 -->
+<script>
+    //일반 함수 내에서 argument 객체의 선언
+    const example0 = function(){
+        console.log(arguments);  //[1, 2, 3, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+        console.log(arguments[2]);  //3
+    }
+    example0(1, 2, 3);
+
+    const example1 = function(){
+        console.log(arguments);  //['사과', '오렌지', '포도', callee: ƒ, Symbol(Symbol.iterator): ƒ]
+        console.log(arguments[1]);  //오렌지
+    }
+    example1("사과", "오렌지", "포도");
+
+
+
+
+
+
+    //화살표 함수 내에서 arguments 객체 선언
+    const example2 = () => {
+        //console.log(arguments);  //Uncaught ReferenceError: arguments is not defined at example2 
+    }
+    example2("삼성", "엘지", "현대");
+
+
+
+    const example3 = (...args) => {
+        const winner = args;
+        console.log(winner); //(3) ['오리', '타조', '치타']
+        console.log(`${winner[2]}가 가장 빠르다`);  //치타가 가장 빠르다
+    }
+    example3("오리", "타조", "치타");
+
+
+
+    
+
+
+
+
+</script>
+

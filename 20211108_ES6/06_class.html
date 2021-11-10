@@ -1,0 +1,108 @@
+<script>
+    //html 문서에서 속성으로 존재하는 클래스명 : 공통 클래스명 부여가 가능(for CSS style)
+    //실생활에서 학교 : 클래스 단위로 수업을 받거나 또는 움직임(과목 또는 소풍)
+    //=> Class라는 존재는 어떠한 그룹을 가리킴
+
+
+    //객체 영역 : 속성(key : value(특정 데이터))과 기능(key : value(function))
+
+    const pony = {
+        name : "아반떼",
+        color : "white",
+        start : function(){
+            console.log(`${this.name}가 시동을 검`);
+            this.drive(); //this를 통해서 객체 내부의 기능을 시작하게끔 지정하는 역할도 가능
+        },
+        drive : function(){
+            console.log(`${this.name}가(이) 주행을 함`);
+            this.stop();
+        },
+        stop : function(){
+            console.log(`${this.name}가(이) 멈춤`);
+            this.parking();
+        },
+        parking : function(){
+            console.log(`${this.name}가(이) 주차함`);
+        },
+        repairCenter : function(){
+            this.color = "빨간색";  //기능 내부에서 부모레벨의 속성도 교체 가능
+            console.log(`${this.name}가(이) ${this.color}으로 색상을 교체했다.`);
+        }
+
+    }
+    console.log(pony.name);
+    console.log(pony.color);
+    pony.start();
+    // pony.drive();
+    // pony.stop();
+    // pony.parking();
+    pony.repairCenter();
+
+
+
+    //객체 속성의 일반적인 생성 - 1
+    const obj1 = {
+        name : "아이폰13"
+    } 
+    obj1.color = "silver";
+    obj1["price"] = "1,500,000원";
+    console.log(obj1);  //{name: '아이폰13', color: 'silver', price: '1,500,000원'}
+
+
+
+    //객체 속성의 일반적인 생성 - 2
+    const obj2 = new Object();
+    obj2.name = "갤럭시22 note";
+    obj2.color = "Metal Blue";
+    obj2["price"] = "1,500,000원";
+    console.log(obj2); //{name: '갤럭시22 note', color: 'Metal Blue', price: '1,500,000원'}
+
+
+    //객체의 단점 : 한번 선언된 객체는 재활용이 불가능
+    //객체를 재활용이 가능한 형태로 구조화를 구성하는 것이 필요했음 ==> 프로토타입(화) : 재사용 또는 재활용을 목적으로 만든 스크립트
+
+
+    const Car = (function(){
+        console.log("프로토타입의 시작");
+        //생성자(constructure) - 객체 내의 어떤 새로운 key와 value 값을 생성하여 객체가 받아들일 수 있도록 구성. 객체 내부의 생성을 담당하는 곳
+        function Car(name1, color1, type1){
+            console.log(this);
+            this.name = name1;
+            this.color = color1;
+            this.type = type1;
+        }
+        //프로토타입은 일종의 대기상태로 구성
+        Car.prototype.start = function(){
+            console.log(`${this.color} ${this.name}가 시동을 겁니다.`);
+            console.log(this); //
+        }
+        Car.prototype.drive = function(){
+            console.log(`${this.color} ${this.name}가 주행을 합니다.`);
+            console.log(this); //
+        }
+        //stop
+        Car.prototype.stop = function(){
+            console.log(`${this.color} ${this.name}가(이) 멈춥니다.`);
+            this.parking();
+        }
+        //parking
+        Car.prototype.parking = function(){
+            console.log(`${this.color} ${this.name}가(이) 주차를 합니다.`);
+        }
+
+
+        return Car;
+    })();  //즉시 실행 함수 : 함수를 호출하는 명칭이 없지만 함수를 시작시킬 수 있는 구조를 갖춘 함수
+
+    const avante = new Car("아반떼", "레드", "준중형");
+    avante.start();
+    avante.drive();
+
+
+    const tusan = new Car("투싼", "블랙", "SUV");
+    tusan.start();
+    // tusan.drive();
+    // tusan.stop();
+    // tusan.parking();
+
+</script>

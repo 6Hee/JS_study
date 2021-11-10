@@ -1,0 +1,146 @@
+<script>
+    //ES6 - ECMA6 = 2015년 6월을 기준으로 새로 업데이트가 된 자바스크립트를 지칭(var => let, const / ES7에서 class + 생성자라는 인자값을 도입)
+    //var 변수명 -> let 변수명, const 변수명(상수 + 배열 또는 객체의 추가 및 삭제) : 메서드(예시, getDate())나 함수에의해서 구분을 명확하게 하고자 도입
+    //클래스 개념 도입 : 예시 '동물'이라는 키워드를 기반으로 하위의 어떤 존재(고양이, 강아지,...)를 찾아서 적용하기 위해 도입 => 객체지향이라는 개념이 본격적으로 도입 + 상속("동물의 행동, 모습, 특징, ..." 의 형태로 확장된 개념) 
+    //객체라는 개념이 넓어짐과 동시에 명확해 짐
+    //콜백지옥을 막기 위해서 promise() 함수 ~ then
+
+    //<템플릿 리터럴(``) - 백틱>
+    //******ES5*****//
+    console.log("*****ES5 방식*****");
+    var string1 = "안녕하세요";
+    var string2 = "반갑습니다.";
+    var greeting1 = string1 + ", " + string2;
+    console.log(greeting1);
+
+    var product1 = {
+        name:"곰인형", 
+        price:"7,200원"
+    }
+    var message1 = "상품 " + product1.name + "의 가격은 " + product1.price + " 입니다."; //문자열과 변수를 연결하는 과정에서도 병합연산자를 사용해야 함
+    console.log(message1);
+
+
+    var multiLine1 = "문자열1번\n문자열2번";
+    console.log(multiLine1);  //데이터 상에서 엔터처럼 적용
+
+    var multiLine1_1 = "문자열1번<br>문자열2번";
+    console.log(multiLine1_1);  //HTML 상에서 엔터처럼 적용
+
+
+    var value1 = 1;
+    var value2 = 2;
+    var result1 = "구입한 총 수량은 " + (value1 + value2) + "개 입니다."
+    console.log(result1);
+
+
+    var bool1 = false;  //10 > 12
+    var result_bool1 = "논리형 값은 " + (bool1 ? "참" : "거짓") + " 입니다.";
+    //삼항조건 연산자 (조건문 ? a : b) -> 조건문이 참(true)이면 a를 실행, 조건문이 거짓(false)이면 b를 실행
+    console.log(result_bool1);
+
+    //*****ES6*****//
+    console.log("*****ES6 방식*****");
+    //-> 템플릿 리터럴 사용. 템플릿 리터럴에는 $를 사용하여 변수 또는 식을 포함할 수 있음
+
+    var string3 = "안녕하세요";
+    var string4 = "반갑습니다.";
+    var greeting2 = `${string3}, ${string4}`;
+    console.log(greeting2);
+
+    var product2 = {
+        name:"곰인형", 
+        price:"7,200원"
+    }
+    var message2 = `상품 ${product2.name}의 가격은 ${product2.price} 입니다`;
+    console.log(message2);
+
+    var multiLine2 = `문자열1번
+문자열2번`;  //템플릿 리터럴을 이용하여 문서상의 enter값을 적용함으로써 이스케이프 시퀀스(\n)를 사용하지 않아도 됨
+    console.log(multiLine2);
+
+    var value3 = 1;
+    var value4 = 2;
+    var result2 = `구입한 총 수량은 ${value3 + value4}개 입니다.`;
+    console.log(result2);
+
+    var bool2 = false;
+    var result_bool2 = `논리형 값은 ${bool2 ? "참" : "거짓"} 입니다.`;
+    console.log(result_bool2);
+
+
+    //******실습문제 - ES5*****//
+    var cart1 = {
+        present : "장미 한 묶음", 
+        price : 15000
+    };
+    var totalPrice1 = function(){
+        return cart1.price + "원";
+    }
+    var myCart1 = "장바구니에 " + cart1.present + "이(가) 담겨 있습니다. 구입가격은 " + totalPrice1() + " 입니다.";
+    console.log(myCart1);  //장바구니에 장미 한 묶음이(가) 담겨 있습니다. 구입가격은 15000원 입니다.
+
+    //******실습문제 - ES6 문법으로 변경하기("+"라는 병합연산자를 모두 제거하여 적용할 것)*****//
+    var cart2 = {
+        present : "장미 한 묶음", 
+        price : 15000
+    };
+
+    //??함수문 작성
+    var totalPrice2 = function(){
+        return `${cart2.price}원`;
+    }
+
+    var myCart2 = `장바구니에 ${cart2.present}이(가) 담겨 있습니다. 구입가격은 ${totalPrice2()} 입니다.`;
+    //var myCart2 = `장바구니에 ${cart2.present}이(가) 담겨 있습니다. 구입가격은 ${cart2.price}원 입니다.`;
+    console.log(myCart2);  //장바구니에 장미 한 묶음이(가) 담겨 있습니다. 구입가격은 15000원 입니다.
+
+
+
+    //일반함수 : 직접 호출할 수 있는 이름이 존재하는 함수
+    
+        function a1(){
+            console.log("a1 함수 호출");
+        }
+        a1();
+    
+
+    //익명함수 : 직접 호출할 수 있는 이름은 존재하지 않은나 간접적으로 함수를 작동시 수 있는 함수
+    
+        var a2 = function(){
+            console.log("a2 함수 호출");
+            return `a2 함수 호출값을 돌려받다`;
+        }
+        a2();  //함수 호출문
+        console.log(a2);  //변수명 a2에 저장된 값 : function(){console.log("a2 함수 호출");}
+        console.log(a2());
+
+        
+
+    //템플릿 리터럴의 이중 구조 (````) : 외부 백틱과 내부 백틱
+    var artist = {name : "나훈아", music : "테스형"};
+
+    var artist_music = `
+        <div>
+            <p>${artist.name}의 대표곡은 ${artist.music ? `${artist.music} 입니다.` : `없습니다.`}</p>
+        </div>
+    `;
+    console.log(artist_music);
+
+    //실습문제
+    //템플릿 리터럴을 활용하여 "영화배우 김수현(변수)은 성인(변수 - 삼항조건 연산자를 활용하여 20세 이상이면 성인으로 간주)입니다."
+    //이중 템플릿을 활용하여 삼항조건 연산자의 기준으로 위의 결과값을 도출하시오.
+    var talent = {
+        name : "김수현",
+        age : 21
+    }
+    var up20 = "성인";
+    var down20 = "청소년";
+
+    var talentInfo = `영화배우 ${talent.name}은 ${talent.age >= 20 ? `${up20}` : `${down20}`} 입니다.`;
+    console.log(talentInfo);  //영화배우 김수현은 성인입니다.
+
+
+    //삼항조건 연산자 : (조건식(참 또는 거짓) ? 조건식 참일 경우 진행될 실행문 : 조건식 거짓일 경우 진행될 실행문)
+    
+</script>
