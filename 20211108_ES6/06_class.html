@@ -105,4 +105,359 @@
     // tusan.stop();
     // tusan.parking();
 
+
+
+
+
+    //학생 Student 
+    const Student = (function(){
+        //생성자 파트(인자에 대한 객체로 구성)
+        function Student(st_name, st_classNum){
+            this.name = st_name;
+            this.classNum = st_classNum;
+        }
+        //프로토타입 구성은 결과값을 도출시 사용
+        Student.prototype.enterance = function(){
+            console.log(`${this.name} 학생이 ${this.classNum}에 들어갔습니다.`);
+        }
+
+        return Student;
+    })();
+    
+    const student1 = new Student("강하늘", "3반");
+    console.log(student1);  //Student {name: '강하늘', classNum: '3반'}
+    console.log(student1.name); //강하늘
+    student1.enterance();
+
+    const student2 = new Student("이하늘", "5반");
+    console.log(student2);  //Student {name: '이하늘', classNum: '5반'}
+    console.log(student2.name); //이하늘
+    student2.enterance();
+
+
+
+
+
+
+    //학생 Student - 2
+    const mem_student = [
+        ["강나라", "7반"],
+        ["나지영", "1반"],
+        ["지석천", "2반"],
+        ["홍성준", "4반"],
+        ["전인태", "5반"],
+        ["김윤배", "3반"],
+    ];
+
+    const Student1 = (function(){
+        //생성자 파트(인자에 대한 객체로 구성)
+        function Student1(st_name, st_classNum){
+            this.name = st_name;
+            this.classNum = st_classNum;
+        }
+        //프로토타입 구성은 결과값을 도출시 사용
+        Student1.prototype.enterance = function(){
+            console.log(`${this.name} 학생이 ${this.classNum}에 들어갔습니다.`);
+        }
+
+        return Student1;
+    })();
+    for (v of mem_student){
+        console.log(v);  //v =  (2) ['강나라', '7반']
+        const student3 = new Student1(v[0], v[1]);
+        console.log(student3);
+        student3.enterance();
+    }
+    //강나라 학생이 7반에 들어갔습니다.
+    //나지영 학생이 1반에 들어갔습니다.
+    //지석천 학생이 2반에 들어갔습니다.
+    //홍성준 학생이 4반에 들어갔습니다.
+    //전인태 학생이 5반에 들어갔습니다.
+    //김윤배 학생이 3반에 들어갔습니다.
+
+
+    //게임 입장 파트(던전)
+    //배열 패턴 : {"이름", "종족", 레벨}
+    const gamer = [
+        {name : "불타는 용병", category : "오크", level:54},
+        {name : "얼음 마법사", category : "휴먼", level:3},
+        {name : "할리쿤", category : "오크", level:32},
+        {name : "냉혈 전사", category : "휴먼", level:27},
+        {name : "무법자", category : "오크", level:65},
+        {name : "초보", category : "오크", level:12},
+    ];
+    //콘솔 창에 "홍길동(오크 - 23)님이 입장하셨습니다."
+    //반드시 프로토타입 이용하여 구성할 것
+
+
+    const Gamer = (function(){
+
+        function Gamer(name, category, level){
+            this.name = name;
+            this.category = category;
+            this.level = level;
+        }
+        Gamer.prototype.enterance = function(){
+            console.log(`${this.name}(${this.category} - ${this.level})님이 입장하셨습니다.`);
+        }
+
+        return Gamer;
+    })();
+
+    for (v of gamer){
+        console.log(v);
+        const Gamer2 = new Gamer(v.name, v.category, v.level);
+        console.log(Gamer2);
+        Gamer2.enterance();
+    }
+
+
+
+    //ES6에서는 객체를 클래스화 시킴(마치 기다리고 있다가 웹브라우저에 데이터값이 전달되면 하나의 메모리 공간을 별도로 차지하게 만듬)
+
+
+    class NewCar {
+        //생성자 : 클래스 내부에 객체를 생성
+
+        constructor(name1, color1){
+            this.name = name1
+            this.color = color1
+        }
+        //기능 : 행동수칙을 지정
+        start(){
+            console.log(this);
+            console.log(`${this.color} 색상의 ${this.name}가(이) 시동을 겁니다.`);
+        }
+        drive(){
+            console.log(`${this.color} 색상의 ${this.name}가(이) 주행을 합니다.`);
+        }
+        stop(){
+            console.log(`${this.color} 색상의 ${this.name}가(이) 멈춥니다.`);
+        }
+        parking(){
+            console.log(`${this.color} 색상의 ${this.name}가(이) 주차합니다.`);
+        }
+    }
+
+    const newAvante = new NewCar("뉴 아반떼", "코드블루");
+    console.log(newAvante);  //NewCar {name: '뉴 아반떼', color: '코드블루'}
+    console.log(newAvante.name); //뉴 아반떼
+    newAvante.start();
+    newAvante.drive();
+    newAvante.stop();
+    newAvante.parking();
+
+
+    const newTusan = new NewCar("뉴 투산", "메탈 블랙");
+    newTusan.start();
+
+
+    //실습문제
+    //class를 활용하여 콘솔창에 "장바구니에 담긴 물건은 곰인형입니다." 출력 / 이 때, "곰인형"은 전달되어지는 데이터 값으로 넣을 것
+    //class를 활용하여 콘솔창에 "장바구니에 담긴 물건은 레고입니다." 출력 / 이 때, "레고"는 전달되어지는 데이터 값으로 넣을 것
+
+
+    class basket {
+        constructor(name, product){
+            this.name = "장바구니"
+            this.product = product
+        }
+        put(){
+            //console.log(this);
+            console.log(`${this.name}에 담긴 물건은 ${this.product}입니다.`);
+        }
+    }
+
+    const bear = new basket("", "곰인형");
+    bear.put();
+    const lego = new basket("", "레고");
+    lego.put();
+
+
+    /*
+    [class 작성간 주의 사항]
+    #1. class라는 개념은 Hoisting 이 적용되지 않음. class 인자가 먼저 선언되고, 관련된 호출이 나중에 문서상에 작성되어야 함 
+    */
+
+    //const gift = new CartBox("옥스포드 블록");  //Uncaught ReferenceError: Cannot access 'CartBox' before initialization
+    class CartBox {
+        constructor(item) {
+            this.item = item;
+        }
+        inBox(){
+            console.log(`장바구니 상품 : ${this.item}`);
+        }
+    }
+    const gift = new CartBox("옥스포드 블록");
+    gift.inBox();
+
+    /*
+    #2. 실제 전달되어지는 생성자와 행동으로 이어질 수 있는 기능을 동일한 명칭으로 작성했을 때
+    */
+    class CartBox1 {
+        constructor(item) {
+            this.item = item;
+        }
+        inBox(){
+            console.log(`장바구니 상품 : ${this.item}`);
+        }
+    }
+    const gift1 = new CartBox1("옥스포드 블록");
+    //gift1.inBox();  //Uncaught SyntaxError: Unexpected token '{'
+
+    //CartBox1 {item:"옥스포드 블록", item: function(){...}}
+
+
+    //자바스크립트가 개별적인 문서로 각 HTML에 접근을 하다보니, 기하급수적으로 늘어나기 시작(단점) ...prototype과 class로 선언(재활용)
+    //만약, 동물원에 대한 프로그램 구성한다면 토끼, 원숭이, 호랑이,... 등에게 먹이를 주었는지 또는 주지 않았는지에 대한 결과값을 얻고자 함
+    //클래스 인자(Zoo)를 통해서 상속을 시도(Rabbit, Monkey, Tiger)
+
+    class Zoo{
+        //생성자 파트
+        constructor(animalName, animalFood){
+            this.name = animalName;
+            this.food = animalFood;
+        }
+        //기능(메서드) vkxm
+        feed(){
+            console.log(`${this.name}에게 ${this.food} 먹이를 주었습니다.`);
+        }
+    }
+    const animal = new Zoo("동물", "음식");
+    animal.feed();
+
+/*
+    class Rabbit{
+        //생성자 파트
+        constructor(animalName, animalFood){
+            this.name = animalName;
+            this.food = animalFood;
+        }
+        //기능(메서드) vkxm
+        feed(){
+            console.log(`${this.name}에게 ${this.food} 먹이를 주었습니다.`);
+        }
+    }
+    const rabbit = new Rabbit("토끼", "클로버");
+    rabbit.feed();
+*/
+
+
+    //상속(extends) : Rabbit 이라는 인스턴스 메모리에 넓은 메모리 공간(Zoo)을 상속하여 활용하게 하겠다는 의미
+    class Rabbit extends Zoo{
+
+    }
+    const rabbit = new Rabbit("토끼", "클로버");
+    rabbit.feed();
+
+
+    class Monkey extends Zoo{
+
+        feed(){
+            console.log(`${this.name}는 감기에 걸려서 ${this.food}를 먹을 수 없습니다.`);
+        }
+    }
+    const monkey = new Monkey("원숭이", "바나나");
+    monkey.feed();
+
+    class Tiger extends Zoo{}
+    const tiger = new Tiger("호랑이", "선지");
+    tiger.feed();
+
+
+    
+
+    //실습문제
+    //각 캐릭터가 존재 + 각 캐릭터마다 장비를 다르게
+    //knight ("기사", "얼음검")
+    //wizard ("마법사", "불의 지팡이")
+    //stealer ("도적", "블랙 단도")
+
+    //Dungeon 이라는 클래스에 생성자와 기능인 action()을 넣어서
+    //콘솔창에 "000이(가) 000을(를) 사용했습니다."
+
+    class hero {
+        constructor(job, weapon){
+            this.job = job;
+            this.weapon = weapon;
+        }
+        action(){
+            console.log(`${this.job}이(가) ${this.weapon}을(를) 사용했습니다`);
+        }
+    }
+    class Knight extends hero{}
+    const knight = new Knight("기사", "얼음검");
+    knight.action();
+
+    class Wizard extends hero{}
+    const wizard = new Wizard("마법사", "불의 지팡이");
+    wizard.action();
+
+    class Stealer extends hero{
+        action(){
+            console.log(`${this.job}은 무기인 ${this.weapon}을(를) 버리고 도망갔습니다.`);
+        }
+    }
+    const stealer = new Stealer("도적", "블랙 단도");
+    stealer.action();
+
+
+
+    //**** getter & setter  *****//
+    //편의점에서 삼각김밥과 햄버거를 구입하고자 한다.
+    //해당 제품, 가격, 수량
+
+    class CartMe {
+        constructor(name1, price1, number1){
+            this.name = name1;
+            this.price = price1;
+            this.number = number1;
+        }
+
+        get number(){
+            //console.log(this.number);
+            return this._number;
+        }
+
+        set number(value){
+            this._number = value < 1 ? 1 : value;
+        }
+        
+        buy(){
+            console.log(`${this.price}원의 ${this.name}을 ${this.number}개 구입했다.`);
+        }
+
+    }
+
+    const gimbap = new CartMe("삼각김밥", 1500, 2);
+    gimbap.buy();
+
+    const burger = new CartMe("햄버거", 4000, -1);
+    console.log(burger.number);
+    burger.buy();
+
+
+    
+
+
+    class Person{
+        constructor(name1, positionSon1){
+            this.name = name1;
+            this.positionSon = positionSon1;
+            this.sentence = "";
+        }
+        set sentenceWord(value){
+            this.sentence = value;
+        }
+        get sentenceWord(){
+            console.log(`${this.name}이 ${this.positionSon}으로써 한 말 : "${this.sentenceWord}"`);
+        }
+    }
+
+    const mr_Hong = new Person("홍길동", "서자");
+    mr_Hong.sentenceWord = "아버지를 아버지라..";
+    mr_Hong.sentenceWord;
+
+
+
 </script>
