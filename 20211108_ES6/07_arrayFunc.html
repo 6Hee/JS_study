@@ -1,0 +1,255 @@
+<script>
+    //#1. 배열의 내장함수 활용
+    console.log([0, 1, 2, 3, 4, 5, 6]);
+    console.log([0, 1, 2, 3, 4, 5, 6].concat(7, 8, 9));
+    console.log([0, 1, 2, 3, 4, 5, 6].concat({name : "홍당무"}));
+    console.log([0, 1, 2, 3, 4, 5, 6].map(function(e){return e * 2})); //[0, 2, 4, 6, 8, 10, 12]
+    console.log([0, 1, 2, 3, 4, 5, 6].map(x => x * 2)); //[0, 2, 4, 6, 8, 10, 12]
+
+
+    //map() 내장 함수는 최초의 인덱스부터 인자값을 받아서 하나씩 출력하는 과정에서 데이터로 반환(서칭)
+
+    console.log([0, 1, 2, 3, 4, 5, 6].filter(function(x){return x % 2 == 0})); //[0, 2, 4, 6]
+    console.log([0, 1, 2, 3, 4, 5, 6].filter(x => x % 2 == 0)); //[0, 2, 4, 6]
+    //filter() 내장함수는 최초의 인덱스로부터 인자값을 받아서 조건에 부합되는 인자만을 배열 데이터로 반환(필터링)
+
+    console.log([0, 1, 2, 3, 4, 5, 6].filter(() => false)); //[]
+    //필터가 만들어내는 배열의 각각 값이 매개변수 자리()로 접근하여 함수문 내부를 실행시키는데(return) false라는 것으로 반환시키기 때문에 배열의 데이터로는 반환되는 값들이 없음 => 기존에 저장된 문서로부터 초기화 시켜야할 경우에만 사용
+
+
+
+    console.log([0, 1, 2, 3, 4, 5, 6].filter(() => true));  //[0, 1, 2, 3, 4, 5, 6]
+    //필터가 만들어내는 배열의 각각 값이 매개변수 자리()로 접근하여 함수문 내부를 실행시키는데(return) true라는 것으로 반환시키기 때문에 배열의 데이터로는 기존 값을 모두 반환된다.
+     
+
+    //#2. map() 내장함수를 활용하여 기존 배열 데이터의 결과값을 제곱근으로 배열화 시킬 예정
+    //[ES5 버전]
+    var numbers1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    var doubleNumber1 = numbers1.map(function(v){
+        return v*v;
+    });
+    console.log(doubleNumber1); //[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+
+    //[ES6 이후 버전 - 변수 선언 변경 + 화살표 함수 사용]
+    var numbers2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    console.log(numbers2);
+    let doubleNumber2 = numbers2.map(x => Math.pow(x, 2));
+    console.log(doubleNumber2);
+
+
+
+    //실습. tel의 value 값인 번호의 좌측에 '010-'를 추가형 배열로 받아오기 (map() 함수를 사용. 주의 사항은 1차 배열의 데이터들은 객체) 최종 결과는 기존의 user1으로부터 tel이라는 객체에 저장된 '010-'가 추가된 상태값만 출력(console창에 보여준다.)
+    const user1 = [
+        {name : "홍길영", age : 25, kor : 95, eng : 80, tel : "2222-3333"},
+        {name : "홍길일", age : 35, kor : 75, eng : 65, tel : "2544-5673"},
+        {name : "홍길이", age : 55, kor : 78, eng : 18, tel : "3459-7893"},
+        {name : "홍길삼", age : 15, kor : 76, eng : 78, tel : "7621-9083"},
+        {name : "홍길사", age : 17, kor : 56, eng : 43, tel : "7185-1553"},
+        {name : "홍길오", age : 18, kor : 26, eng : 16, tel : "1254-3003"},
+        {name : "홍길육", age : 26, kor : 45, eng : 28, tel : "1354-3213"},
+    ];
+    const modifyTel = user1.map(function(v){
+        console.log(v);
+        console.log(v.tel);
+        console.log("010-" + v.tel);
+        v.tel = "010-" + v.tel;
+        console.log(v.tel);
+
+        return v;
+    });
+
+    console.log(modifyTel);
+
+    //[ES6]변경된 전화번호만 볼 때
+    const modifyTel2 = user1.map(v => `010-${v.tel}`);
+    console.log(modifyTel2); //['010-010-2222-3333', '010-010-2544-5673', '010-010-3459-7893', '010-010-7621-9083', '010-010-7185-1553', '010-010-1254-3003', '010-010-1354-3213']
+
+
+    //[ES6]변경된 전화번호를 포함한 전체 항목을 볼 때
+    const modifyTel3 = user1.map(v => {
+        v.tel = `010-${v.tel}`;
+        return v;
+    });
+    console.log(modifyTel3); //(7) [{…}, {…}, {…}, {…}, {…}, {…}, {…}]0: {name: '홍길영', age: 25, kor: 95, eng: 80, tel: '010-010-2222-3333'}1: {name: '홍길일', age: 35, kor: 75, eng: 65, tel: '010-010-2544-5673'}2: {name: '홍길이', age: 55, kor: 78, eng: 18, tel: '010-010-3459-7893'}3: {name: '홍길삼', age: 15, kor: 76, eng: 78, tel: '010-010-7621-9083'}age: 15eng: 78kor: 76name: "홍길삼"tel: "010-010-7621-9083"[[Prototype]]: Object4: {name: '홍길사', age: 17, kor: 56, eng: 43, tel: '010-010-7185-1553'}age: 17eng: 43kor: 56name: "홍길사"tel: "010-010-7185-1553"[[Prototype]]: Object5: {name: '홍길오', age: 18, kor: 26, eng: 16, tel: '010-010-1254-3003'}6: {name: '홍길육', age: 26, kor: 45, eng: 28, tel: '010-010-1354-3213'}
+
+
+
+
+    //실습. user1 배열 데이터를 활용하여 각 인덱스의 kor과 eng의 점수를 합산하여 총점을 추가(총점의 key 명칭은 total)
+    const totalNum = user1.map(v => {
+        console.log(v);
+        const total_score = v.kor + v.eng;
+        console.log(total_score);
+        v.total = total_score;
+        return v;
+    })
+
+    console.log(totalNum);
+
+
+
+    //객체의 key와 value 생성
+    const obj = {};
+    obj.name = "라이언";  //객체 내부 key : value 추가
+    obj["group"] = "카카오 프렌즈";  //객체 내부 key : value 추가
+    console.log(obj);
+
+    delete obj.group; //객체 내부 특정 key 삭제 (동시에 해당하는 value도 자동 삭제됨)
+    console.log(obj);
+
+
+    //filter 실습1 : kor의 점수가 80미만인 학생만 filter함수를 이용하여 배열 리스트로 추출하시오.
+
+    const user2 = [
+        {name : "홍길영", age : 25, kor : 95, eng : 80, tel : "2222-3333"},
+        {name : "홍길일", age : 35, kor : 75, eng : 65, tel : "2544-5673"},
+        {name : "홍길이", age : 55, kor : 78, eng : 18, tel : "3459-7893"},
+        {name : "홍길삼", age : 15, kor : 76, eng : 78, tel : "7621-9083"},
+        {name : "홍길사", age : 17, kor : 95, eng : 82, tel : "7185-1553"},
+        {name : "홍길오", age : 18, kor : 26, eng : 16, tel : "1254-3003"},
+        {name : "홍길육", age : 26, kor : 45, eng : 28, tel : "1354-3213"},
+    ];
+
+    const modifyKor = user2.filter(v => v.kor < 80)
+    console.log(modifyKor);
+
+
+    //filter 실습 2 : kor의 점수가 80이상이고, eng 점수가 80 이상인 학생만 추출
+    const OverLevel = user2.filter(v => v.kor >= 80 && v.eng >= 80);
+    console.log(OverLevel);
+
+    //filter 실습 3 : 각 과목의 점수가 80점 이하의 과락이 없고, 총점이 160이상인 합격자만 추출 (추출할 변수명 certUsers)
+    function pass(v){
+        return v.kor > 80 && v.eng > 80 && v.kor + v.eng >= 160
+    }
+    const certUsers = user2.filter(pass);
+    console.log(certUsers);
+
+    //filter 실습 4 : 각 과목의 점수가 80점 이하의 과락이 있거나, 총점이 160 미만인 불합격자만 추출(추출할 변수명 failUsers)
+    function fail(v){
+        return v.kor <= 80 || v.eng <= 80 || v.kor + v.eng < 160
+    }
+    const failUsers = user2.filter(fail);
+    console.log(failUsers);
+
+
+
+
+
+
+
+    //#4. 배열의 반복문 종류
+    const arr_str = ["A", "B", "C", "D", "E"];
+    console.log("===== 일반 for =====");
+    for (let i = 0; i < arr_str.length; i++) console.log(arr_str[i]);
+
+
+    console.log("===== for ~ in =====");  //for ~ in문 : 배열의 갯수만큼 해당하는 반복문을 실행한다. (i : 인덱스 번호)
+    for(let i in arr_str) console.log(arr_str[i]);
+
+
+    console.log("===== for ~ of =====");  //for ~ of문 : 배열의 갯수만큼 해당하는 반복문을 실행한다. (v : 실제 배열 데이터)
+    for (v of arr_str) console.log(v);
+
+
+    console.log("===== forEach ====="); 
+    arr_str.forEach(function(v, i){
+        console.log(`인덱스 번호 ${i}의 데이터 : ${v}`);
+    });
+
+
+    //실습 forEach 
+    console.log("===== 실습 forEach ====="); 
+    const soccerStar = [
+        ["손흥민", "토트넘"],
+        ["황희찬", "울버햄튼"],
+        ["이강인", "마요르카"],
+        ["김민재", "페네르체"],
+    ];
+
+    //forEach 함수를 활용하여
+    //"000(이름)은 000(소속팀) 이다" 데이터 개수만큼 출력(at console)
+    soccerStar.forEach(function(v, i){
+        console.log(`${v[0]}은 ${v[1]} 이다`);
+    });
+
+
+
+    //#4-1. 객체 데이터의 반복문 적용
+
+    //======= for ~ of문 - 1 : Object.key(객체 변수명) ========//
+    const hero1 = {
+        name : "김준희",
+        device : "호미",
+        suit : "일반 가죽옷"
+    }
+
+    //방법 : 우선 각 객체 내부의 속성으로 접근하는 과정에서 key 값만 먼저 추출하고 해당하는 value 값을 각 key 값의 기준으로 추출한다.
+
+    for(const prop of Object.keys(hero1)){
+        console.log(prop);  //name device suit
+        const value = hero1[prop];
+        console.log(value);  //김준희, 호미, 일반 가죽옷
+        console.log(`${prop} : ${value}`);
+    }
+
+
+
+    //const [a, b] = ["디아블로", "카트라이더"];
+
+    //======= for ~ of문 - 2 : Object.entries(객체 변수명) ========//
+    console.log("===== for ~ of문 - 2 : Object.entries(객체 변수명) ====="); 
+    const hero2 = {
+        name : "용병",
+        device : "목검",
+        suit : "낡은 갑옷"
+    }
+    //동시 할당하여 key와 value을 반복하는 과정에서 가져온다.
+    for (const [key, value] of Object.entries(hero2)){
+        //console.log(key);
+        //console.log(value);
+        console.log(`${key} : ${value}`);
+    }
+
+
+
+    //======= for ~ of문 ========//
+    const hero3 = {
+        name : "얼음 공주",
+        device : "얼음 지팡이",
+        suit : "얼음 망토"
+    }
+    //방법 : 우선 각 객체 내부의 속성으로 접근하는 과정에서 key 값만 먼저 추출하고 해당하는 value 값을 각 key 값의 기준으로 추출한다.
+    for (const prop in hero3){
+        console.log(prop);
+        console.log(hero3[prop]);
+        console.log(`${prop} : ${hero3[prop]}`);
+    }
+
+
+
+
+    //======= forEach문 - 1 + Object.keys(객체 변수명) ========//
+    console.log("===== forEach문 - 1 + Object.keys(객체 변수명) ====="); 
+
+    //======= for ~ of문 ========//
+    const hero4 = {
+        name : "김준희",
+        device : "호미",
+        suit : "일반 가죽옷"
+    }
+    Object.keys(hero4).forEach((v, i) => {
+        console.log(v);
+        console.log(hero4[v]);
+        console.log(`${v} : ${hero4[v]}`);
+    });
+
+
+
+
+
+
+
+
+</script>

@@ -428,14 +428,13 @@
         }
 
     }
-
-    const gimbap = new CartMe("삼각김밥", 1500, 2);
-    gimbap.buy();
-
-    const burger = new CartMe("햄버거", 4000, -1);
-    console.log(burger.number);
-    burger.buy();
-
+    const hamberg = new CartMe("햄버거", 4000, -1);
+    console.log(hamberg.number);
+    hamberg.buy();
+/*
+    const semogimbab = new CartMe("삼각김밥", 1500, 2);
+    semogimbab.buy();
+*/
 
     
 
@@ -450,13 +449,13 @@
             this.sentence = value;
         }
         get sentenceWord(){
-            console.log(`${this.name}이 ${this.positionSon}으로써 한 말 : "${this.sentenceWord}"`);
+            console.log(`${this.name}이 ${this.positionSon}으로써 한 말 : "${this.sentence}"`);
         }
     }
 
     const mr_Hong = new Person("홍길동", "서자");
-    mr_Hong.sentenceWord = "아버지를 아버지라..";
-    mr_Hong.sentenceWord;
+    mr_Hong.sentenceWord = "아버지를 아버지라..";  //setter를 실행한다.
+    mr_Hong.sentenceWord; //getter를 실행한다.
 
 
 
