@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홈페이지에서 우클릭 막기 / f12(검사창 열기) 막기 / 드래그(마우스로 작성된 텍스트 가져오기) 막기</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        //F12(검사창 열기) 막기
+        $(document).ready(function(){
+            $(document).bind("keydown", function(e){
+                if(e.keyCode == 123){
+                    e.preventDefault();
+                    e.returnValue = false;
+                }
+
+                if(e.keyCode == 17){
+                    e.preventDefault();
+                    e.returnValue = false;
+                }
+            });
+        });
+
+        /*
+        document.onkeydown = disableKey;
+
+        function disableKey(event){
+            console.log(event);
+            if(event.keyCode == 123 || event.keyCode == 16 || event.keyCode == 17 || event.keyCode == 18 || event.keyCode == 21){
+                // alert("해당 키보드는 사용할 수 없습니다.")
+                // return false;
+                // event.returnValue = false;
+            }
+
+        }
+        */
+
+
+        //우클릭 막기
+        document.onmousedown = disableclick;
+
+        function disableclick(event){
+            console.log(event);
+            if(event.button == 2){ /*마우스 우클릭한 상태*/
+                alert("마우스 우클릭 금지");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+    <h2>우클릭 막기 / f12(검사창 열기) 막기 / 드래그(마우스로 작성된 텍스트 가져오기) 막기</h2>
+</body>
+</html>

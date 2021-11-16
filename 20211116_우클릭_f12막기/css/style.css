@@ -1,0 +1,4 @@
+@charset "utf-8";
+
+*{box-sizing: border-box;}
+html, body{min-height: 100vh; margin: 0; padding: 0;} /*body의 공간이 전체 화면을 채워야 함*/

@@ -245,10 +245,168 @@
         console.log(`${v} : ${hero4[v]}`);
     });
 
+    //========forEach문 - 2 + Object.enteries(객체 변수명)====//
+    console.log("====forEach문 - 2 + Object.enteries(객체 변수명)====");
+
+    const hero5 = {
+        name : "토마토 재배자",
+        device : "호미",
+        suit : "일반 가죽옷"
+    }
+    Object.entries(hero5).forEach((v, i) => {
+        console.log(i);  //0 -> 1 -> 2
+        console.log(v);  //['name', '토마토 재배자'] -> ['device', '호미'] -> ['suit', '일반 가죽옷']
+        console.log(hero5[i]);  //undefined -> undefined -> undefined (hero5 변수에 담긴 데이터는 객체 데이터이므로 인덱스 번호로는 접근할 수 없음)
+        console.log(hero5[v]);  //undefined -> undefined -> undefined (hero5 변수에 담긴 데이터는 객체 데이터이므로 실 데이터로도 접근할 수 없음)
+
+        console.log(`${v[0]}:${v[1]}`);
+
+    });
 
 
 
+</script>
 
+
+<hr>
+
+
+<h3>Array.from() 메서드 : 배열이 아닌 일반적인 객체를 배열 데이터로 변환시킨다.</h3>
+<div class="member1">
+    <p>송강호</p>
+    <p>주지훈</p>
+    <p>류승룡</p>
+</div>
+
+<script>
+    //<1번 방법>
+    const member_01 = document.querySelectorAll(".member1 p");
+    console.log(member_01);  //NodeList(3) [p, p, p]
+    
+    const member_01_Array = Array.from(member_01);
+    console.log(member_01_Array);  //[p, p, p]
+
+    const member_01_name = member_01_Array.map(v => v.textContent);
+    console.log(member_01_name);  //['송강호', '주지훈', '류승룡']
+
+    //<2번 방법>
+    const member_02 = Array.from(document.querySelectorAll(".member1 p"));
+    console.log(member_02);  //[p, p, p]
+    const member_02_name = member_02.map(v => v.textContent);
+    console.log(member_02_name);  //['송강호', '주지훈', '류승룡']
+
+    //<3번 방법>
+    const member_03 = document.querySelectorAll(".member1 p");
+    console.log(member_03);  //NodeList(3) [p, p, p]
+    const member_03_Array = Array.from(member_03, v => {
+        console.log(v);
+        // <p>송강호</p>
+        // <p>주지훈</p>
+        // <p>류승룡</p>
+        return v.textContent;
+    });
+    console.log(member_03_Array);  //['송강호', '주지훈', '류승룡']
+
+</script>
+
+
+<hr>
+
+<h3>배열 관련한 기타 메서드</h3>
+<script>
+    //Array.of()메서드 : 전달 받은 모든 인수를 배열화시킴
+    const myTripItem = Array.of("여행가방", "비상금", " 워킹화");
+    console.log(myTripItem); //['여행가방', '비상금', ' 워킹화']
+
+
+    //Array.find() : 제공된 테스트 함수를 충족하는 첫번째 원소(원 데이터)를 반환
+    //과목점수 탈락 확인 (60점 미만인 점수 여부 확인)
+    const myScore = [72, 83, 68, 57, 59];
+    let faultScore = myScore.find(v => v < 60);
+    console.log(faultScore); //57  만약 찾을 수 없다면 undefined
+
+    //Array.findIndex() 메서드 : 조건과 일치하는 첫번째 원소의 인덱스를 반환
+    let faultIndex = myScore.findIndex(v => v < 60);
+    console.log(faultIndex); //3(인덱스 번호) (만약 찾을 수 없다면 -1)
+
+    //Array.some() 메서드 : 배열 데이터 중에 조건과 일치하는 것이 있다면 중지하고 true를 반환
+    let arraySome = myScore.some(v => v > 80);
+    console.log(arraySome); //true
+
+    //Array.every()메서드 : 배열 데이터의 모든 원소(실 데이터)가 조건과 일치하면 중지하고 true를 반환
+    let arrayEvery = myScore.every(v => v >= 60);
+    console.log(arrayEvery); //false
+
+
+</script>
+
+
+<hr>
+
+
+<script>
+    /*
+    https://www.youtube.com/embed/M_l1IjV-Ycw?rel=0&autoplay=1&loop=1&playlist=M_l1IjV-Ycw&mute=1 
+
+    "rel=0&autoplay=1&loop=1&playlist=M_l1IjV-Ycw&mute=1"
+    -> 위 문장을 객체화 시킴
+    {
+        rel : 0,
+        autoplay : 1,
+        loop : 1,
+        ...
+    }
+
+    //문자열인 "banana=10&apple=20&orange=30"  ==객체화==> {banana:10, apple:20, orange:30}
+    */
+    //ES5 형식을 이용
+    var qs1 = "banana=10&apple=20&orange=30";
+    function parse_01(qs){  //qs = "banana=10&apple=20&orange=30";
+        var queryString = qs.substr(0, qs.length);  //substr(인덱스번호, 개수) : 문자 객체 중 인덱스번호부터 문자의 개수를 잘라서 저장
+        console.log(queryString);  //banana=10&apple=20&orange=30
+        var chunks = queryString.split("&");  //split("특정문자") : 문자 객체에서 특정문자를 기준으로 배열 데이터로 분리
+        console.log(chunks);  //['banana=10', 'apple=20', 'orange=30'] (length = 3)
+        var result = {};
+        for(i=0; i<chunks.length; i++){
+            var part = chunks[i].split("=");
+            console.log(part);  //['banana', '10'] | ['apple', '20'] | ['orange', '30']
+            var key = part[0];  //'banana' | 'apple' | 'orange'
+            var value = Number(part[1]);  //10 | 20 | 30
+            result[key] = value;
+            console.log(result);  //{banana: 10}  ==> {banana: 10, apple: 20}  ==>  {banana: 10, apple: 20, orange: 30}
+        }
+        return result;
+    }
+    var parse_result_1 = parse_01(qs1);
+    console.log(parse_result_1);  //{banana: 10, apple: 20, orange: 30}
+
+
+    //ES6 형식을 이용
+    const qs2 = "banana=10&apple=20&orange=30";
+    const parse_02 = qs => {
+        const queryString = qs.substr(0, qs.length);
+        console.log(queryString);  //banana=10&apple=20&orange=30
+        const chunks = queryString.split("&");
+        console.log(chunks); //['banana=10', 'apple=20', 'orange=30']
+
+        const result = {};
+        chunks.forEach(v => {
+            const [key, value] = v.split("=");
+            result[key] = Number(value);
+            console.log(result);
+            /*
+            {banana: 10}
+            {banana: 10, apple: 20}
+            {banana: 10, apple: 20, orange: 30}
+            */
+        });
+
+
+        return result;
+    }
+
+    const parse_result_02 = parse_02(qs2);
+    console.log(parse_result_02); //{banana: 10, apple: 20, orange: 30}
 
 
 
