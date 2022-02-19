@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Youtube Mobile</title>
+    <script src="https://kit.fontawesome.com/74f66dece5.js" crossorigin="anonymous"></script>
+    <script src="./main.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fab fa-youtube"></i>
+            <span class="title">Youtube</span>
+        </div>
+        <div class="icons">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-ellipsis-v"></i>
+        </div>
+    </header>
+
+
+    <section class="player">
+        <video controls autoplay src="video/cat_01.mp4"></video>
+    </section>
+
+
+    <div class="infoAndUpNext">
+        <section class="info">
+            <div class="metadata">
+                <ul class="hashtags">
+                    <li>#cat</li>
+                    <li>#mycat</li>
+                    <li>#cutecat</li>
+                </ul>
+                <div class="titleAndButton">
+                    <span class="title clamp">
+                        고양이랑 놀아주기 | 너무 귀여운 우리 고양이 하쿠 | 하루에 2시간 이상은 놀아줘야 되서 너무 힘들어요! | 우리고양이는 노르웨이숲 고양이, 놀숲냥이
+                    </span>
+                    <button class="moreBtn"><i class="fas fa-caret-down"></i></button>
+                </div>
+                <div class="views">
+                    <span class="views">1M views 1 month ago</span>
+                </div>
+            </div>
+            <div class="actions">
+                <li><button><i class="fas fa-thumbs-up"></i><span>1K</span></button></li>
+                <li><button><i class="fas fa-thumbs-down"></i><span>0</span></button></li>
+                <li><button><i class="fas fa-share"></i><span>Share</span></button></li>
+                <li><button><i class="fas fa-plus"></i><span>Save</span></button></li>
+                <li><button><i class="fab fa-font-awesome-flag"></i><span>Report</span></button></li>
+            </div>
+            <div class="channel">
+                <div class="metadata">
+                    <div class="img"><img src="./img/profile.jpg" alt=""></div>
+                    <div class="info">
+                        <span class="name">하쿠</span>
+                        <div class="subscribers">1M subscribers</div>
+                    </div>
+                </div>
+                <button class="subscribe">subscribe</button>
+            </div>
+        </section>
+    
+    
+        <section class="UpNext">
+            <span class="title">Up next</span>
+            <ul>
+                <li class="item">
+                    <div class="img"><img src="./img/img_02.png" alt=""></div>
+                    <div class="info">
+                        <span class="title">자기 물 안먹고 집사 물 뺏어먹는 하쿠</span>
+                        <span class="name">하쿠</span>
+                        <span class="views">0 views</span>
+                    </div>
+                    <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+                </li>
+                <li class="item">
+                    <div class="img"><img src="./img/img_03.png" alt=""></div>
+                    <div class="info">
+                        <span class="title">오늘은 하루종일 놀아줘야지!</span>
+                        <span class="name">하쿠</span>
+                        <span class="views">0 views</span>
+                    </div>
+                    <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+                </li>
+                <li class="item">
+                    <div class="img"><img src="./img/img_04.png" alt=""></div>
+                    <div class="info">
+                        <span class="title">하쿠의 비밀기지 | 하쿠가 안보이면 발조심!</span>
+                        <span class="name">하쿠</span>
+                        <span class="views">0 views</span>
+                    </div>
+                    <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+                </li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
