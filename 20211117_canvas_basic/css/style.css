@@ -1,0 +1,19 @@
+@charset "utf-8";
+html, body{margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6, p{margin: 0;}
+a{text-decoration: none;}
+
+.frame{display: flex; flex-wrap: wrap;}
+/* canvas{width: 50%; height: 600px;} */
+
+.canvas_01{background: #aff;}
+.canvas_02{background: #ffa;}
+.canvas_03{background: #faa;}
+.canvas_04{background: #aaf;}
+.canvas_05{background: #4bf;}
+.canvas_06{background: #fcf;}
+.canvas_07{background: #acf;}
+.canvas_08{background: #555;}
+.canvas_09{background: #ffa;}
+.canvas_10{background: #aff;}
+.canvas_12{background: #fac;}
