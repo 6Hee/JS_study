@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_vue_ex(실습문제)</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    
+    <div id="customer">
+        <p v-for="i in array">
+            이름 : {{i.name}}, 나이 : {{i.age}}세
+        </p>
+    </div>
+
+    <script>
+        new Vue({
+            el : '#customer',
+            data : {
+                array : [
+                    {name : '홍길동', age : '27'},
+                    {name : '이순신', age : '30'},
+                    {name : '김유신', age : '26'},
+                ]
+            }
+        });
+    </script>
+
+
+
+</body>
+</html>

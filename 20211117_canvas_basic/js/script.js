@@ -207,3 +207,25 @@ context10.arc(250, 250, 100, 0, 2*Math.PI, false);
 
 context10.fillStyle = "green";
 context10.fill();
+
+
+
+
+/* canvas_12 자유형태 그리기 */
+const canvas12 = document.getElementById("canvas_12");
+const context12 = canvas12.getContext("2d");
+
+//canvas의 크기 설정
+canvas12.width = window.innerWidth / 2 ;
+canvas12.height = window.innerHeight / 2 ;
+
+context12.beginPath();
+context12.moveTo(150, 300);
+context12.arc(150, 250, 50, 0.5*Math.PI, 1.7*Math.PI, false);
+
+context12.quadraticCurveTo(250, 100, 350, 215);
+
+
+context12.lineWidth = 6;
+context12.strokeStyle = "white";
+context12.stroke();
